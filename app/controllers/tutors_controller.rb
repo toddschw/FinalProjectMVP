@@ -11,6 +11,7 @@ class TutorsController < ApplicationController
   # GET /tutors/1.json
   def show
     @subjects = @tutor.subjects
+    @ratings = @tutor.ratings
   end
 
   # GET /tutors/new
