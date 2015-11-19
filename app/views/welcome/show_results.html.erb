@@ -1,24 +1,37 @@
-<h1>Welcome#show_results</h1>
-<p>Find me in app/views/welcome/show_results.html.erb</p>
-
-<!--
-if @subects do
-  puts go
-else
-  puts none
-end -->
+<div style="color:green;">
+Debug Info:<br>
+Controller:  Welcome#show_results<br>
+Model: app/views/welcome/show_results.html.erb
+<hr>
+</div>
 
 <ul>
 <% if @subjects %>
   <% @subjects.each do |subject| %>
       <li><%= subject.expertise %></li>
-        <hr>
+      <hr width="10%" align="left">
       <strong>Tutors:</strong><br>
       <% subject.tutors.each do |tutor| %>
-        Name: <%= tutor.name %><br>
+        Name: <a href="/tutors/<%= tutor.id %>"><%= tutor.name %></a><br>
         City: <%= tutor.city %><br>
-        Picture: <br><%= image_tag(tutor.picurl, width:25) %><br><br>
-      <% end %><br><br>
+        Picture: <%= image_tag(tutor.picurl, height:15) %><br>
+        Rating:
+                  <% num_reviewers = 0 %>
+                  <% total_stars = 0 %>
+                  <% tutor.ratings.each do |rating| %>
+                  <% total_stars += rating.pencils %>
+                  <% num_reviewers += 1 %>
+                <% end %>
+                  <% if num_reviewers > 0 %>
+                    <% avg_rating = (total_stars.to_d / num_reviewers.to_d).to_d %>
+                    <% avg_rating = avg_rating.to_s + " stars" %>
+                  <% else %>
+                    <% avg_rating = "No ratings" %>
+                  <% end %>
+                <%= avg_rating %>
+                <br><br>
+      <% end %>
+      <br><br>
 
   <% end %>
 <% else %>
