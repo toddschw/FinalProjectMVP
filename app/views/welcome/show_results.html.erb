@@ -1,0 +1,27 @@
+<h1>Welcome#show_results</h1>
+<p>Find me in app/views/welcome/show_results.html.erb</p>
+
+<!--
+if @subects do
+  puts go
+else
+  puts none
+end -->
+
+<ul>
+<% if @subjects %>
+  <% @subjects.each do |subject| %>
+      <li><%= subject.expertise %></li>
+        <hr>
+      <strong>Tutors:</strong><br>
+      <% subject.tutors.each do |tutor| %>
+        Name: <%= tutor.name %><br>
+        City: <%= tutor.city %><br>
+        Picture: <br><%= image_tag(tutor.picurl, width:25) %><br><br>
+      <% end %><br><br>
+
+  <% end %>
+<% else %>
+    <p>You didn't input anything</p>
+<% end %>
+</ul>

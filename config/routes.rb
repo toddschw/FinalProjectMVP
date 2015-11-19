@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   resources :topics
   resources :subjects
   resources :tutors
+
+  get 'welcome' => 'welcome#index'
+  get 'welcome/results' => 'welcome#show_results'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
