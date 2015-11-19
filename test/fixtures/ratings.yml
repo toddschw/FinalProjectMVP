@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  review: MyString
+  pencils: 1
+  name_of_reviewer: MyString
+  tutor_id: 
+
+two:
+  review: MyString
+  pencils: 1
+  name_of_reviewer: MyString
+  tutor_id: 

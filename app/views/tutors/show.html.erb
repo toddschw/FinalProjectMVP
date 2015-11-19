@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tutor.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @tutor.city %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @tutor.bio %>
+</p>
+
+<p>
+  <strong>Picurl:</strong>
+  <%= image_tag @tutor.picurl, width: '200' %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @tutor.rate %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @tutor.email %>
+</p>
+
+<p>
+  <strong>Areas of Expertise:</strong><Br>
+  <% @subjects.each do |subject| %>
+    <%= subject.expertise %><br>
+    <% end %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_tutor_path(@tutor) %> |
+<%= link_to 'Back', tutors_path %>
