@@ -8,29 +8,30 @@ Model: app/views/welcome/show_results.html.erb
 <ul>
 <% if @subjects %>
   <% @subjects.each do |subject| %>
-      <li><%= subject.expertise %></li>
+      <li><%= subject.expertise %> Tutors</li>
       <hr width="10%" align="left">
-      <strong>Tutors:</strong><br>
-      <% subject.tutors.each do |tutor| %>
-        Name: <a href="/tutors/<%= tutor.id %>"><%= tutor.name %></a><br>
-        City: <%= tutor.city %><br>
-        Picture: <%= image_tag(tutor.picurl, height:15) %><br>
-        Rating:
-                  <% num_reviewers = 0 %>
-                  <% total_stars = 0 %>
-                  <% tutor.ratings.each do |rating| %>
-                  <% total_stars += rating.pencils %>
-                  <% num_reviewers += 1 %>
-                <% end %>
-                  <% if num_reviewers > 0 %>
-                    <% avg_rating = (total_stars.to_d / num_reviewers.to_d).to_d %>
-                    <% avg_rating = avg_rating.to_s + " stars" %>
-                  <% else %>
-                    <% avg_rating = "No ratings" %>
-                  <% end %>
-                <%= avg_rating %>
-                <br><br>
-      <% end %>
+        <% subject.tutors.each do |tutor| %>
+
+                  Name: <a href="/tutors/<%= tutor.id %>"><%= tutor.name %></a><br>
+                  City: <%= tutor.city %><br>
+                  Picture: <%= image_tag(tutor.picurl, height:15) %><br>
+                  Rating:
+                            <% num_reviewers = 0 %>
+                            <% total_stars = 0 %>
+                            <% tutor.ratings.each do |rating| %>
+                            <% total_stars += rating.pencils %>
+                            <% num_reviewers += 1 %>
+                          <% end %>
+                            <% if num_reviewers > 0 %>
+                              <% avg_rating = (total_stars.to_d / num_reviewers.to_d).to_d %>
+                              <% avg_rating = avg_rating.to_s + " stars (out of 5)" %>
+                            <% else %>
+                              <% avg_rating = "No ratings" %>
+                            <% end %>
+                          <%= avg_rating %>
+                          <br><br>
+
+        <% end %>
       <br><br>
 
   <% end %>
