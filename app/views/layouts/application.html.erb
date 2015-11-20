@@ -7,9 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Home", welcome_path %>
-<span style="float:right;"><%= link_to "Tutor Register", new_tutor_path %> |
-<%= link_to "Tutor Log In", new_session_path %> | <%= link_to "Logout", welcome_path %></span>
+
+<%= link_to "Home", welcome_path %> |
+<% if current_tutor %>
+  You are logged in as tutor <%= current_tutor.name %>
+<% end %>
+
+<span style="float:right;">
+  <%= link_to "Tutor Register", new_tutor_path %> |
+  <%= link_to "Tutor Log In", new_session_path %> |
+  <%= link_to "Logout Not Working Yet", welcome_path %></span>
 <hr>
 
 
