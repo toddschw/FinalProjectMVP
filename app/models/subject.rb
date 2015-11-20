@@ -6,7 +6,7 @@ class Subject < ActiveRecord::Base
     if (search.present?)
       Subject.where("expertise LIKE ?", "%#{search}%")
     else
-      nil
+      false
     end
   end
 end

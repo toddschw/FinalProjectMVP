@@ -1,40 +1,35 @@
-<div style="color:#98AFC7;">
-Controller:  Welcome#show_results<br>
-Model: app/views/welcome/show_results.html.erb
-<hr>
-</div>
-
-<ul>
-<% if @subjects %>
-  <% @subjects.each do |subject| %>
-      <li><%= subject.expertise %> Tutors</li>
-      <hr width="10%" align="left">
-        <% subject.tutors.each do |tutor| %>
-
-                  Name: <a href="/tutors/<%= tutor.id %>"><%= tutor.name %></a><br>
-                  City: <%= tutor.city %><br>
-                  Picture: <%= image_tag(tutor.picurl, height:15) %><br>
-                  Rating:
-                            <% num_reviewers = 0 %>
-                            <% total_stars = 0 %>
-                            <% tutor.ratings.each do |rating| %>
-                            <% total_stars += rating.pencils %>
-                            <% num_reviewers += 1 %>
-                          <% end %>
-                            <% if num_reviewers > 0 %>
-                              <% avg_rating = (total_stars.to_d / num_reviewers.to_d).to_d %>
-                              <% avg_rating = avg_rating.to_s + " stars (out of 5)" %>
-                            <% else %>
-                              <% avg_rating = "No ratings" %>
-                            <% end %>
-                          <%= avg_rating %>
-                          <br><br>
-
-        <% end %>
-      <br><br>
-
-  <% end %>
+<% if @subjects == false %>
+  You didn't put anything in the search box.
 <% else %>
-    <p>You didn't input anything</p>
-<% end %>
-</ul>
+  <%# a valid search was entered. Either show results or nothing found msg %>
+  <%# test for no results first %>
+  <% if @subjects.empty? %>
+    Sorry, no tutors found...
+  <% else %>  <%# Results were found, display them %>
+    <% @subjects.each do |subject| %>
+    <p><u><%= subject.expertise %> Tutors</u><br>
+      <% subject.tutors.each do |tutor| %>
+      <strong>Tutor Name:</strong> <%= tutor.name %><br>
+      <strong>Location:</strong> <%= tutor.city %><br>
+      <strong>Profile picture:</strong> <%= image_tag(tutor.picurl, height:15) %><br>
+      <strong>Rating:</strong>
+       <% num_reviewers = 0 %>
+       <% total_stars = 0 %>
+       <% tutor.ratings.each do |rating| %>
+       <% total_stars += rating.pencils %>
+       <% num_reviewers += 1 %>
+       <% end %>
+           <% if num_reviewers > 0 %>
+            <% avg_rating = (total_stars.to_d / num_reviewers.to_d).to_d %>
+            <% avg_rating = avg_rating.to_s + " stars (out of 5)" %>
+           <% else %>
+            <% avg_rating = "No ratings" %>
+           <% end %>
+       <%= avg_rating %><br>
+       <a href="/tutors/<%= tutor.id %>">View full profile</a><br></p>
+      <% end %>
+    <% end %>
+    <%# Closes Results were found loop  %>
+
+  <% end %> <%# Closes no results found  %>
+<% end %> <%# Closes search term not entered   %>
