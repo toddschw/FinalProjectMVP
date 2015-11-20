@@ -32,7 +32,7 @@
 
 <p>
   <strong>Rate:</strong>
-  <%= @tutor.rate %>
+  <%= number_to_currency(@tutor.rate) %>
 </p>
 
 <p>
@@ -50,12 +50,8 @@
 <p>
   <strong>Reviews</strong><Br>
   <% @ratings.each do |rating| %>
-    A reviewer says: <%= rating.review %><br>
-    Number of Stars <%= rating.pencils %>/5<br>
-    Left by: <%= rating.name_of_reviewer %><br><br>
+    Comment: <%= rating.review %><br>
+    Number of Stars: <%= rating.pencils %>/5<br>
+    Student: <%= rating.name_of_reviewer %><br><br>
   <% end %>
 </p>
-
-
-<%= link_to 'Edit', edit_tutor_path(@tutor) %> |
-<%= link_to 'Back', tutors_path %>

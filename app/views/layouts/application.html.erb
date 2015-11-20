@@ -14,7 +14,7 @@
   <%= image_tag current_tutor.picurl, width:30 %>
 
 <% end %>
-<% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %>
+<span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span>
 
 <span style="float:right;">
   <%= link_to "Tutor Register", new_tutor_path %> |

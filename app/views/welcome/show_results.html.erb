@@ -11,7 +11,7 @@
       <% subject.tutors.each do |tutor| %>
       <strong>Tutor Name:</strong> <%= tutor.name %><br>
       <strong>Location:</strong> <%= tutor.city %><br>
-      <strong>Profile picture:</strong> <%= image_tag(tutor.picurl, width:18) %><br>
+      <!-- <strong>Profile picture:</strong> <%= image_tag(tutor.picurl, width:18) %><br> -->
       <strong>Rating:</strong>
        <% num_reviewers = 0 %>
        <% total_stars = 0 %>
@@ -26,7 +26,7 @@
             <% avg_rating = "No ratings" %>
            <% end %>
        <%= avg_rating %><br>
-       <a href="/tutors/<%= tutor.id %>">View full profile</a><br></p>
+       <strong><a href="/tutors/<%= tutor.id %>">View full profile</a></strong><br></p>
       <% end %>
     <% end %>
     <%# Closes Results were found loop  %>

@@ -23,7 +23,7 @@ class WelcomeController < ApplicationController
       current_tutor = nil
       redirect_to welcome_bye_path
     else
-      flash[:not_logged_in] = "You're not logged in yet"
+      flash[:not_logged_in] = "Oops..you're not yet logged in."
       redirect_to welcome_path
     end
   end
