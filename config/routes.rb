@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :ratings
   resources :topics
   resources :subjects
   resources :tutors
-
+  resources :sessions
+  
   get 'welcome' => 'welcome#index'
   get 'welcome/results' => 'welcome#show_results'
 
