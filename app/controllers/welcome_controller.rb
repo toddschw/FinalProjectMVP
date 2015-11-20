@@ -14,6 +14,7 @@ class WelcomeController < ApplicationController
   end
 
   def dashboard
+    @tutor = current_tutor
   end
 
   def logout
