@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120033719) do
+ActiveRecord::Schema.define(version: 20151120034131) do
 
   create_table "ratings", force: :cascade do |t|
     t.string   "review"
@@ -47,9 +47,10 @@ ActiveRecord::Schema.define(version: 20151120033719) do
     t.string   "picurl"
     t.integer  "rate"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "username"
+    t.string   "password_digest"
   end
 
   add_index "tutors", ["username"], name: "index_tutors_on_username", unique: true
