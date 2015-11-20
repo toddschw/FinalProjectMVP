@@ -1,5 +1,4 @@
-<div style="color:green;">
-Debug Info:<br>
+<div style="color:#98AFC7;">
 Controller:  Welcome#index<br>
 Model: app/views/welcome/index.html.erb
 <hr>
@@ -7,10 +6,16 @@ Model: app/views/welcome/index.html.erb
 
 
 
-<h1>Welcome to our MVP</h1>
+<h1>Welcome to Version 1.0 of TutorED!</h1>
+<h3>Popular subjects: </h3>
+<% @subjects.each do |subject| %>
+  <a href="/welcome/results?q=<%= subject.expertise %>"><%= subject.expertise %></a>&nbsp;
+<% end %>
 
+
+
+<h3>What subject do you want to learn?</h3>
 <%= form_tag("/welcome/results", method: "get") do %>
-  <%= label_tag(:q, "Search for Tutors:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>
 <% end %>
