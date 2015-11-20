@@ -5,11 +5,15 @@ Rails.application.routes.draw do
   resources :topics
   resources :subjects
   resources :tutors
+
+
   resources :sessions
-  
+
+
   get 'welcome' => 'welcome#index'
   get 'welcome/results' => 'welcome#show_results'
-
+  get 'welcome/dashboard' => 'welcome#dashboard'
+  get 'welcome/kill' => 'welcome#kill'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

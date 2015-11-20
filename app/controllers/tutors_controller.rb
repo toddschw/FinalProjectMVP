@@ -1,5 +1,5 @@
 class TutorsController < ApplicationController
-  before_action :set_tutor, only: [:show, :edit, :update, :destroy]
+  # before_action :set_tutor, only: [:show, :edit, :update, :destroy]
 
   # GET /tutors
   # GET /tutors.json
@@ -68,6 +68,11 @@ class TutorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def dashboard
+  end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

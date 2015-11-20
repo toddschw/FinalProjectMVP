@@ -12,4 +12,14 @@ class WelcomeController < ApplicationController
     #   @subjects = "No tutors available"
     # end
   end
+
+  def dashboard
+  end
+
+
+  def kill
+    session.delete(:tutor_id)
+    current_tutor = nil
+    redirect_to welcome_path
+  end
 end
