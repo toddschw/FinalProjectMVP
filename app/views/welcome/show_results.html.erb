@@ -11,7 +11,7 @@
       <% subject.tutors.each do |tutor| %>
       <strong>Tutor Name:</strong> <%= tutor.name %><br>
       <strong>Location:</strong> <%= tutor.city %><br>
-      <strong>Profile picture:</strong> <%= image_tag(tutor.picurl, height:15) %><br>
+      <strong>Profile picture:</strong> <%= image_tag(tutor.picurl, width:18) %><br>
       <strong>Rating:</strong>
        <% num_reviewers = 0 %>
        <% total_stars = 0 %>

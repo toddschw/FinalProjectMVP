@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>id</th>
       <th>City</th>
       <th>Bio</th>
       <th>Picurl</th>
@@ -20,6 +21,7 @@
     <% @tutors.each do |tutor| %>
       <tr>
         <td><%= tutor.name %></td>
+        <td><%= tutor.id %></td>
         <td><%= tutor.city %></td>
         <td><%= tutor.bio %></td>
         <td><%= image_tag tutor.picurl, width: '200' %></td>
