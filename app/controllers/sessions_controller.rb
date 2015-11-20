@@ -3,7 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @tutor = Tutor.find_by(username: params[:username])
+    @tutor = Tutor.find_by(username: params[:username]).try(:authenticate, params[:password])
+
+# User.find_by(name: 'david').try(:authenticate, 'mUc3m00RsqyRe')
+
 
     if @tutor
       # logged in, hooray
