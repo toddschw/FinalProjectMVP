@@ -28,15 +28,21 @@ class TutorsController < ApplicationController
   def create
     @tutor = Tutor.new(tutor_params)
 
-    respond_to do |format|
-      if @tutor.save
-        format.html { redirect_to @tutor, notice: 'Tutor was successfully created.' }
-        format.json { render :show, status: :created, location: @tutor }
-      else
-        format.html { render :new }
-        format.json { render json: @tutor.errors, status: :unprocessable_entity }
-      end
+    if @tutor.save
+      redirect_to welcome_path, notice: "Created tutor"
+    else
+      render action: 'new'
     end
+
+    # respond_to do |format|
+    #   if @tutor.save
+    #     format.html { redirect_to @tutor, notice: 'Tutor was successfully created.' }
+    #     format.json { render :show, status: :created, location: @tutor }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @tutor.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /tutors/1
@@ -71,6 +77,6 @@ class TutorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutor_params
-      params.require(:tutor).permit(:name, :city, :bio, :picurl, :rate, :email)
+      params.require(:tutor).permit(:name, :city, :bio, :picurl, :rate, :email, :username, :password)
     end
 end
