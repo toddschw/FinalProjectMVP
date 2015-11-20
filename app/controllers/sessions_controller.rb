@@ -14,10 +14,6 @@ class SessionsController < ApplicationController
     end
   end
 
-  def logout
-    render plain: params.to_json
-  end
-
 
 
 

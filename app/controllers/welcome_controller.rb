@@ -16,10 +16,19 @@ class WelcomeController < ApplicationController
   def dashboard
   end
 
-
-  def kill
-    session.delete(:tutor_id)
-    current_tutor = nil
-    redirect_to welcome_path
+  def logout
+    if current_tutor
+      session.delete(:tutor_id)
+      current_tutor = nil
+      redirect_to welcome_bye_path
+    else
+      flash[:not_logged_in] = "You're not logged in yet"
+      redirect_to welcome_path
+    end
   end
+
+  def bye
+  end
+
+
 end
