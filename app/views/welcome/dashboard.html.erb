@@ -1,3 +1,21 @@
 <h1>Welcome back, <%= current_tutor.name %></h1>
 
+<h2>Expertise:</h2>
+<% current_tutor.subjects.each do |subject| %>
+  <%= subject.expertise %>
+<% end %>
+
+<h2>Your Hourly Rate:</h2>
+<%= number_to_currency(current_tutor.rate) %>
+
+
+
+<h2>Messages:</h2>
+[Student messages would go here - not built]
+
+<h2>Upcoming Appointments:</h2>
+[upcoming appointments would go here - not built]
+
+
+<h2>Edit Your Profile</h2>
 <%= render 'form' %>

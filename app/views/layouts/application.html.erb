@@ -10,7 +10,9 @@
 
 <%= link_to "Home", welcome_path %>
 <% if current_tutor %>
-  | You are logged in as tutor <%= current_tutor.name %>
+  | Logged in as tutor <%= current_tutor.name %>
+  <%= image_tag current_tutor.picurl, width:30 %>
+
 <% end %>
 <% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %>
 
