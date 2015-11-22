@@ -21,19 +21,31 @@ end %>
     </div>
   <% end %>
 
+  <!-- LOOP through subjects -->
+  <!-- use second form_for -->
+  <p>What subjects do you teach?</p>
+  <div class="field">
+    <% @subjects.each do |subject| %>
+      <%= check_box_tag(:subject_id) %>
+      <%= label_tag(:subject_id, subject.expertise) %>
+  <% end %>
+  </div>
+
+
+<div class="field">
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+</div>
+<div class="field">
+  <%= f.label "Choose a Password" %>
+  <%= f.password_field :password %>
+</div>
+
+
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, :value => "#{fb_name}" %>
   </div>
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-
   <div class="field">
     <%= f.label :email %>
     <%= f.text_field :email, :value => "#{fb_email}" %>

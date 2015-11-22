@@ -19,6 +19,8 @@ class TutorsController < ApplicationController
 
     # render plain: params.to_json
     @tutor = Tutor.new
+    @subjects = Subject.all
+
 
     if !params[:token].nil?
       # @fb_info = Tutor.profile(params[:token])
@@ -34,13 +36,17 @@ class TutorsController < ApplicationController
   # POST /tutors
   # POST /tutors.json
   def create
-    @tutor = Tutor.new(tutor_params)
 
-    if @tutor.save
-      redirect_to welcome_path, notice: "Created tutor"
-    else
-      render action: 'new'
-    end
+    render plain: params
+
+    # @tutor = Tutor.new(tutor_params)
+    #
+    #
+    # if @tutor.save
+    #   redirect_to welcome_path
+    # else
+    #   render action: 'new'
+    # end
 
     # respond_to do |format|
     #   if @tutor.save
