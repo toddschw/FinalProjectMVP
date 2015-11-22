@@ -23,7 +23,7 @@
             <% avg_rating = (total_stars.to_d / num_reviewers.to_d).to_d %>
             <% avg_rating = avg_rating.to_s + " stars (out of 5)" %>
            <% else %>
-            <% avg_rating = "No ratings" %>
+            <% avg_rating = "No ratings yet" %>
            <% end %>
        <%= avg_rating %><br>
 
@@ -38,3 +38,7 @@
 
   <% end %> <%# Closes no results found  %>
 <% end %> <%# Closes search term not entered   %>
+
+<%# set a session variable for search term %>
+<%# useful for returning student to this page %>
+<% session[:q] = @q %>

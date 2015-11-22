@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<a href="/welcome/results?q=<%= session[:q] %>">Go back to results</a>
+
 <h1>Full Profile for <%= @tutor.name %> </h1>
 
 <table border="1">
@@ -27,7 +29,7 @@
   <strong>Reviews</strong><Br>
   <% @ratings.each do |rating| %>
     Comment: <%= rating.review %><br>
-    Number of Stars: <%= rating.pencils %>/5<br>
-    Student: <%= rating.name_of_reviewer %><br><br>
+    Stars: <%= rating.pencils %>/5<br>
+    - <%= rating.name_of_reviewer %><br><br>
   <% end %>
 </p>
