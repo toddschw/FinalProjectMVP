@@ -1,14 +1,36 @@
 
-<h1>Welcome to TutorED (v1.0)!</h1>
-<h3>All subjects: </h3>
+
+<!-- SEARCH BAR -->
+<div class="search-background">
+  <div class="search">
+    <!-- <h3>What subject do you want to learn?</h3> -->
+    <%= form_tag("/welcome/results", method: "get") do %>
+      <%= text_field_tag :q, "Search for a Tutor" %>
+      <%= submit_tag("Search") %>
+    <% end %>
+
+  <div class="subjects">
+
+<h3>Subjects to consider: </h3>
 <% @subjects.each do |subject| %>
-  <a href="/welcome/results?q=<%= subject.expertise %>"><%= subject.expertise %></a>&nbsp;
+  <a href="/welcome/results?q=<%= subject.expertise %>" class="popular"><%= subject.expertise %></a>&nbsp;
 <% end %>
+</div>
+</div>
 
 
+<!-- ABOUT US -->
+<div class="about">
+  <p>Tutrd connects Tutors and Students in unique way.</p>
+</div>
 
-<h3>What subject do you want to learn?</h3>
-<%= form_tag("/welcome/results", method: "get") do %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
-<% end %>
+
+<div class="services">
+  <ul>
+    <li>Payment Processing</li>
+    <li>Comprehensive Tutor Search</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <div>
