@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('#tutor_modal').click(function(event) {
+    event.preventDefault();
+    alert("you clicked a tutor!");
+  });
+});

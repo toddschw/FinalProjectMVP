@@ -1,15 +1,7 @@
-require 'open-uri'
+require "open-uri"
 
-class Tutor < ActiveRecord::Base
-  validates :password, length: { minimum: 8 }
+class Facebook
 
-  has_many :topics
-  has_many :subjects, through: :topics
-  has_many :ratings
-
-  has_secure_password
-
-  # This is necessary for Facebook Oauth
   def self.profile(token)
     url = 'https://graph.facebook.com/me'
     url += '?fields=id,name,email,first_name,last_name,locale,gender'
@@ -17,5 +9,4 @@ class Tutor < ActiveRecord::Base
     encoded_url = URI::encode(url)
     open(encoded_url).read
   end
-
 end

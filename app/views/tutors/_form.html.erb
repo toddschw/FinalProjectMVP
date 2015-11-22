@@ -1,3 +1,13 @@
+
+<% if @fb_info
+ fb_new_tutor = JSON.parse(@fb_info)
+ fb_email = fb_new_tutor["email"]
+ fb_name = fb_new_tutor["name"]
+else
+  fb_email = ""
+  fb_name = ""
+end %>
+
 <%= form_for(@tutor) do |f| %>
   <% if @tutor.errors.any? %>
     <div id="error_explanation">
@@ -13,7 +23,7 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :value => "#{fb_name}" %>
   </div>
   <div class="field">
     <%= f.label :username %>
@@ -26,7 +36,7 @@
 
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :value => "#{fb_email}" %>
   </div>
   <div class="field">
     <%= f.label :city %>

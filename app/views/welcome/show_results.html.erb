@@ -26,7 +26,12 @@
             <% avg_rating = "No ratings" %>
            <% end %>
        <%= avg_rating %><br>
-       <strong><a href="/tutors/<%= tutor.id %>">View full profile</a></strong><br></p>
+
+       <%# define the link for individual tutor %>
+       <% tutor_href= "/tutors/"  + tutor.id.to_s %>
+       <%# use link_to %>
+       <%= link_to "See Full Profile", tutor_href, id: 'tutor_modal' %><br><br>
+
       <% end %>
     <% end %>
     <%# Closes Results were found loop  %>

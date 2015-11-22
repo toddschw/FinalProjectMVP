@@ -16,7 +16,15 @@ class TutorsController < ApplicationController
 
   # GET /tutors/new
   def new
+
+    # render plain: params.to_json
     @tutor = Tutor.new
+
+    if !params[:token].nil?
+      # @fb_info = Tutor.profile(params[:token])
+      @fb_info = Tutor.profile(params[:token])
+    end
+
   end
 
   # GET /tutors/1/edit

@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
   end
 
   def show_results
-    # render plain: params.to_json
+    #render plain: params.to_json
     @subjects = Subject.search(params[:q])
     # if @subjects
     #   @subjects

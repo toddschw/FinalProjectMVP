@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get 'welcome/logout' => 'welcome#logout'
   get 'welcome/bye' => 'welcome#bye'
 
+  get 'facebook/token'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

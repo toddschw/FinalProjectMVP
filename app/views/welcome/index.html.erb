@@ -1,6 +1,6 @@
 
 <h1>Welcome to TutorED (v1.0)!</h1>
-<h3>Popular subjects: </h3>
+<h3>All subjects: </h3>
 <% @subjects.each do |subject| %>
   <a href="/welcome/results?q=<%= subject.expertise %>"><%= subject.expertise %></a>&nbsp;
 <% end %>
