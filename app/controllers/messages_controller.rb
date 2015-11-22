@@ -15,6 +15,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
+    @tutor = Tutor.find_by id: params[:tutor_id]
   end
 
   # GET /messages/1/edit

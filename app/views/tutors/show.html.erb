@@ -11,7 +11,8 @@
   <strong><th>Bio</th></strong>
 
   <tr>
-    <td><%= image_tag @tutor.picurl, width: '100' %></td>
+    <td><%= image_tag @tutor.picurl, width: '100' %>
+      <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
     <td><%= number_to_currency(@tutor.rate) %></td>
     <td><%= @tutor.city %></td>
     <td><%= @tutor.bio %></td>
