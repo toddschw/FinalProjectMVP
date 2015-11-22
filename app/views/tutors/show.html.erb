@@ -1,47 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tutor.name %>
-</p>
+<h1>Full Profile for <%= @tutor.name %> </h1>
+
+<table border="1">
+  <strong><th>Picture</th></strong>
+  <strong><th>Rate</th></strong>
+  <strong><th>Location</th></strong>
+  <strong><th>Bio</th></strong>
+
+  <tr>
+    <td><%= image_tag @tutor.picurl, width: '100' %></td>
+    <td><%= number_to_currency(@tutor.rate) %></td>
+    <td><%= @tutor.city %></td>
+    <td><%= @tutor.bio %></td>
+  </tr>
+</table>
 
 <p>
-  <strong>ID:</strong>
-  <%= @tutor.id %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @tutor.username %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @tutor.city %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @tutor.bio %>
-</p>
-
-<p>
-  <strong>Picurl:</strong>
-  <%= image_tag @tutor.picurl, width: '200' %>
-</p>
-
-<p>
-  <strong>Rate:</strong>
-  <%= number_to_currency(@tutor.rate) %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @tutor.email %>
-</p>
-
-<p>
-  <strong>Areas of Expertise:</strong><Br>
+  <strong>All Areas of Expertise:</strong><Br>
   <% @subjects.each do |subject| %>
     <%= subject.expertise %><br>
     <% end %>

@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120034131) do
+ActiveRecord::Schema.define(version: 20151122153500) do
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "from"
+    t.string   "email"
+    t.text     "body"
+    t.integer  "tutor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "messages", ["tutor_id"], name: "index_messages_on_tutor_id"
 
   create_table "ratings", force: :cascade do |t|
     t.string   "review"

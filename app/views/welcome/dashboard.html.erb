@@ -9,9 +9,19 @@
 <%= number_to_currency(current_tutor.rate) %>
 
 
-
 <h2>Messages:</h2>
-[Student messages would go here - not built]
+<table border="1">
+  <strong><th>Student</th></strong>
+  <strong><th>Student's Email</th></strong>
+  <strong><th>Message Body</th></strong>
+<% @messages.each do |message|  %>
+  <tr>
+    <td><%= message.from %></td>
+    <td><a href="mailto:<%= message.email %>"><%= message.email %></a></td>
+    <td><%= message.body %></td>
+  </tr>
+<% end %>
+</table>
 
 <h2>Upcoming Appointments:</h2>
 [upcoming appointments would go here - not built]
