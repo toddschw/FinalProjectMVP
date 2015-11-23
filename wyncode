@@ -1,0 +1,500 @@
+    2  git initl
+    3  git init
+    4  git add .
+    5  git commit -m'Trio Solo'
+    6  git remote add origin https://github.com/MaryGualtieri/Trio-Solo.git
+    7  git push -u origin master
+    8  git remote -v
+    9  git remote rm origin
+   10  git remote -v
+   11  git init
+   12  git add .
+   13  git commit 'Trio Solo'
+   14  git commit -m'Trio Solo'
+   15  git status
+   16  git log
+   17  cd desktop/triosolo
+   18  git status
+   19  git remote add origin https://github.com/MaryGualtieri/Trio-Solo.git
+   20  git push -u origin master
+   21  git remote add origin https://github.com/MaryGualtieri/Trio-Solo.git
+   22  git push -u origin master
+   23  cd ..
+   24  cd desktop
+   25  cd triosolo
+   26  atom .
+   27  git init
+   28  git add .
+   29  git commit -m'Update'
+   30  git push
+   31  git init
+   32  git add .
+   33  git commit -m'Last Attempt before I pull my hair out'
+   34  git push
+   35  rails s
+   36  rail s
+   37  cd 
+   38  cd desktop/triosolo
+   39  ls
+   40  rails s
+   41  rails s
+   42  bundle install
+   43  bundle install
+   44  rails s
+   45  cd ..
+   46  cd do-not-use
+   47  rails s
+   48  bundle install
+   49  rdbm
+   50  rails s
+   51  atom .
+   52  git init
+   53  git remote -v
+   54  git add .
+   55  git commit -m'I tried my best'
+   56  git remote add origin https://github.com/MaryGualtieri/Trio_Solo.git
+   57  git push -u origin master
+   58  git log
+   59  git status
+   60  git push -u origin master
+   61  git remote add origin https://github.com/MaryGualtieri/Trio_Solo.git
+   62  git push -u origin master
+   63  git remote -v
+   64  git push
+   65  git remote rm orging
+   66  git remote rm orgin
+   67  git remote rm origin
+   68  git remote -v
+   69  git remote add origin https://github.com/MaryGualtieri/Trio_Solo.git
+   70  git push -u origin master
+   71  git remote add origin https://github.com/MaryGualtieri/Trio.git
+   72  git remote -v
+   73  git remote rm origin
+   74  git remote -v
+   75  git remote add origin https://github.com/MaryGualtieri/Trio.git
+   76  git push -u origin master
+   77  /Users/Mary/Desktop/DO-NOT-USE/Gemfile ; exit;
+   78  cd desktop
+   79  cd triosolo
+   80  bundle install
+   81  rdbm
+   82  git remote -v
+   83  git push
+   84  git config --global push.default matching
+   85  git push
+   86  git remote -v
+   87  git init
+   88  git add .
+   89  git commit -m'Make it go away'
+   90  git push
+   91  rails s
+   92  cd desktop/wyncode
+   93  mkdir AJAX
+   94  cd AJX
+   95  cd AJAX
+   96  rails new toodoo
+   97  cd toodoo
+   98  rails g scaffold task name --javascript-engine=js
+   99  rake db:migrate
+  100  atom . 
+  101  cd desktop/wyncode/AJX
+  102  cd desktop/wyncode/AJAX
+  103  rake routes
+  104  rdbm
+  105  atom .
+  106  ls
+  107  cd toodoo
+  108  git remote add origin https://github.com/MaryGualtieri/Ajax_TooDoo.git
+  109  git init
+  110  git add .
+  111  git status
+  112  git commit -m'AJAX TooDoo Rails App'
+  113  git remote add origin https://github.com/MaryGualtieri/Ajax_TooDoo.git
+  114  git push -u origin master
+  115  atom .
+  116  rails 
+  117  srails s
+  118  rails s
+  119  rails s
+  120  bundle install
+  121  ls
+  122  cd toodoo
+  123  rails s
+  124  cd ..
+  125  ls
+  126  cd server
+  127  ls
+  128  atom .
+  129  ruby server.rb
+  130  bundle
+  131  ruby server.rb
+  132  ruby server.rb
+  133  ruby server.rb
+  134  ruby server.rb
+  135  cd ..
+  136  cd ..
+  137  rails new food
+  138  rails g scaffold Nutrients --no-migration
+  139  cd foodn
+  140  cd food
+  141  rails g scaffold Nutrients --no-migration
+  142  atom .
+  143  rails s
+  144  rake routes
+  145  bundle install
+  146  cd ..
+  147  cd wyncode/AJAX
+  148  ls
+  149  cd toodoo
+  150  rails s
+  151  rails s
+  152  atom .
+  153  rails s
+  154  rails s
+  155  rails s
+  156  atom .
+  157  cd ..
+  158  cd ..
+  159  cd ..
+  160  ls ~/.ssh/
+  161  ssh-keygen
+  162  ssh-keygen -f Mary
+  163  ls ~/.ssh/
+  164  cat ~/id_rsa.pub
+  165  cd ..
+  166  cat ~/id_rsa.pub
+  167  cat ~/.ssh/id_rsa.pub
+  168  cat ~/.ssh/id_rsa.pub | pbcopy
+  169  git clone git@github.com:MaryGualtieri/Voter-Sim.git
+  170  git remote -v
+  171  ls
+  172  cd Voter-Sim
+  173  git remote -v
+  174  git push
+  175  cd desktop/wyncode/solo
+  176  atom .
+  177  rails s
+  178  cd desktop/wyncode/solo
+  179  rails s
+  180  cd ..
+  181  cd triosolo
+  182  atom .
+  183  rails s
+  184  atom .
+  185  rails g controller product
+  186  atom .
+  187  rdbm
+  188  cd ..
+  189  cd blog
+  190  atom .
+  191  bundle install
+  192  rdbm
+  193  rake routes
+  194  rails g devise:install
+  195  rails generate devise:install
+  196  git init
+  197  git add .
+  198  git commit -m'Added login'
+  199  git push
+  200  rails s
+  201  rails s
+  202  atom .
+  203  atom .
+  204  ls 
+  205  atom .
+  206  rails g devise user
+  207  rdbm
+  208  rdbm
+  209  rake routes
+  210  cd ..
+  211  rails new nested_resources_demo
+  212  cd nested_resources_demo
+  213  atom .
+  214  rails g scaffold organization name
+  215  rails c
+  216  rdbm
+  217  rails c
+  218  rails g scaffold department name organizaton:resources
+  219  rdbm
+  220  rails d scaffold department name organizaton:resources
+  221  rails g scaffold department name organizaton:references
+  222  rdbm
+  223  rails c
+  224  rdbm
+  225  rails c
+  226  rdbm
+  227  rails c
+  228  history 
+  229  rails d scaffold department name organization:references
+  230  rails d scaffold organizaton
+  231  rails g scaffold organizaton name
+  232  rails g scaffold department name organization:references
+  233  rake db:drop
+  234  rdb
+  235  rdbm
+  236  rails c
+  237  rake routes
+  238  rake routes
+  239  rails c
+  240  rake routes
+  241  cd ..
+  242  ls 
+  243  cd nested_resources_demo
+  244  rails s
+  245  cd desktop/wyncode
+  246  rails new secretnotes
+  247  cd secretnotes
+  248  git init
+  249  git add -A
+  250  git commit -m 'initial'
+  251  git status
+  252  git log
+  253  atom .
+  254  bundle install
+  255  git commit -m'add bcrypt' Gemfile*
+  256  git log
+  257  rails g model user username:string:uniq password_digest:string
+  258  rdbm
+  259  git add -A
+  260  git commit -m'generate user model'
+  261  git log
+  262  git add app/models/user.rb
+  263  git commit -m'add password to user'
+  264  git log
+  265  rails g controller users new
+  266  git add -A
+  267  git commit -m'generate users controller'
+  268  git add .
+  269  gc -m'spike out signup form'
+  270  git log
+  271  git commit -m"actually save the user" app/controllers/user_controller.rb
+  272  git commit -m"actually save the user" app/controllers/users_controller.rb
+  273  git log
+  274  git add .
+  275  git status
+  276  rails g controller sessions new
+  277  git add . 
+  278  git commit -m 'start sessions controller'
+  279  git commitrails g scaffold note user:belongs_to name:string body:text
+  280  rails g scaffold note user:belongs_to name:string body:text
+  281  rdbm
+  282  git add -A
+  283  gc -m'notes scaffold'
+  284  rails c
+  285  rake routes
+  286  rails c
+  287  rails c
+  288  rails s
+  289  rails s
+  290  rails s
+  291  cd desktop
+  292  rails new nested resources
+  293  cd $!
+  294  cd $!
+  295  cd desktop
+  296  ls
+  297  cd nested
+  298  cd ..
+  299  cd wyncode
+  300  ls
+  301  cd nested_resources_demo
+  302  rails s
+  303  atom .
+  304  rails s
+  305  . ~/.profile
+  306  open ~/.bash_profile
+  307  open ~/.profile
+  308  rails new TDD
+  309  cd TDD
+  310  git init
+  311  git add .
+  312  gc -m'initial commit'
+  313  git status
+  314  rails g scaffolding user
+  315  rails g scaffold user
+  316  git add .
+  317  git commit -m'add user scaffold'
+  318  rake
+  319  rdbm
+  320  rake
+  321  ls test/fixtures
+  322  atom .
+  323  rails g scaffold user name email
+  324  rails g scaffold name email
+  325  rdbm
+  326  rake
+  327  rails new grate && cd rake
+  328  atom . 
+  329  cd .
+  330  ls
+  331  cd grate
+  332  git add .
+  333  git init
+  334  git add .
+  335  git commit -m'Make initial commit'
+  336  ls bin/
+  337  atom .
+  338  bundle install
+  339  BUNDLE
+  340  bundle binstubs rspec-core
+  341  git status
+  342  rails g rspec:install
+  343  rspec
+  344  bin/rspec
+  345  git add .
+  346  gc -m'Install Rspec'
+  347  cd ..
+  348  cd desktop
+  349  git clone git@github.com:MaryGualtieri/FinalProjectMVP.git
+  350  ls
+  351  cd FinalProjectMVP
+  352  rails s
+  353  bundle install
+  354  rdbm
+  355  cd  ..
+  356  cd ..
+  357  ls
+  358  cd grate
+  359  atom .
+  360  rails g
+  361  rails g
+  362  rails g
+  363  rails g
+  364  rails g rspec:feature user_views_their_profile
+  365  bundle install
+  366  bundle
+  367  bundle
+  368  bundle
+  369  cd ..
+  370  cd desktop/wyncode
+  371  git clone git@github.com:wyncode/bootstrap-demo.git
+  372  ls
+  373  cd bootstrap-demo
+  374  atom .
+  375  touch index.html
+  376  open bootstrap.html
+  377  la
+  378  ls
+  379  cd public
+  380  open bootstrap.html
+  381  open index.html
+  382  cd desktop/wyncode
+  383  ls
+  384  cd bootstrap-demo
+  385  cd ublic
+  386  cd public
+  387  open index.html
+  388  cd ..
+  389  cd ..
+  390  git clone git@github.com:MaryGualtieri/student-resources.git
+  391  cd git@github.com:MaryGualtieri/student-resources.git
+  392  ls
+  393  student-resources
+  394  cd student-resources
+  395  ls
+  396  cd feature-tests-hackathon
+  397  atom .
+  398  cd ..
+  399  cd ..
+  400  rails new property_manager -T
+  401  atom .
+  402  cd property_manager
+  403  atom .
+  404  bundle install
+  405  rails g rspec:install
+  406  rails g model landlord
+  407  rdbm
+  408  rspec
+  409  rspec
+  410  rails g model property
+  411  rdbm
+  412  rspec
+  413  rails d model property
+  414  rails g model property landlord:references
+  415  rdbm
+  416  rake db:rollback
+  417  rails g migration AddPropertyToLandlord landlord:references
+  418  rdbm
+  419  rake db:rollback
+  420  rails g migration AddLandlordToProperty landlord:references
+  421  rdbm
+  422  history | grep rails
+  423  history | grep 'rails g'
+  424  history | grep 'rails d'
+  425  rake db:drop
+  426  rdbm
+  427  rspec
+  428  history | grep 'rails g'
+  429  rspec
+  430  rspec
+  431  rspec 
+  432  rspec
+  433  rspec
+  434  rspec
+  435  rspec
+  436  rails g model occupancy property:references
+  437  rdbm
+  438  rspec
+  439  rspec
+  440  rspec
+  441  rspec
+  442  rspec
+  443  rspec
+  444  rspec
+  445  rspec
+  446  rspec
+  447  rspec
+  448  rspec
+  449  cd desktop
+  450  git clone
+  451  git clone git@github.com:MaryGualtieri/FinalProjectMVP.git
+  452  cd FinalProjectMVP
+  453  atom .
+  454  rails s
+  455  cd ..
+  456  touch testmodal.html
+  457  cd testmodal.html
+  458  ls
+  459  atom testmodal.html
+  460  mkdir modaltest
+  461  cd modaltest
+  462  atom .
+  463  ls
+  464  open testmodal.html
+  465  cd ..
+  466  cd wyncode
+  467  ls
+  468  cd bootstrop-demo
+  469  cd bootstrap-demo
+  470  atom .
+  471  atom .
+  472  cd ..
+  473  rails new jquery_filter
+  474  atom .
+  475  bundle install
+  476  rdbm
+  477  rake routes
+  478  ATOM .
+  479  rake routes
+  480  rake routes
+  481  rails c
+  482  rake routes
+  483  rails c
+  484  rake routes
+  485  atom .
+  486  atom .
+  487  rails -v
+  488  history | grep git
+  489  ga
+  490  cd ..
+  491  history
+  492  ~/.profile
+  493  cd ..
+  494  ~/.profile
+  495  ~/.profile
+  496  vim ~/.bash_profile
+  497  sudo ~/.profile
+  498  open ~/.profile
+  499  source ~/.profile
+  500  gaa
+  501  history > history.txt

@@ -1,0 +1,19 @@
+<!--Create Account-->
+        <li><div class="modal">
+          <label for="modal-2">
+            <div class="modal-trigger">Register</div>
+          </label>
+          <input class="modal-state" id="modal-2" type="checkbox" />
+          <div class="modal-fade-screen">
+            <div class="modal-inner">
+              <div class="modal-close" for="modal-2"></div>
+              <h1>Register</h1>
+              <!-- <p class="modal-intro"><%#= link_to new_tutor_path %></p> -->
+              <p class="modal-intro"><%= render partial: "tutors/form", locals: {tutor: @tutor } %></p>
+
+            </div>
+          </div>
+        </div></li>
+        </ul>
+    </div>
+<

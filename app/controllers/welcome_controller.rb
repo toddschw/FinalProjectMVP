@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   def index
+    @tutor = Tutor.new
     @subjects = Subject.all
   end
 

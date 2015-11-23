@@ -22,7 +22,8 @@
 
         <% end %></li>
 
-<!--Create Account-->
+<!--Login-->
+
         <li><div class="modal">
           <label for="modal-1">
             <div class="modal-trigger">Login</div>
@@ -36,23 +37,12 @@
           </div>
         </div></li>
 
-<!--Login-->
-        <li><div class="modal">
-          <label for="modal-2">
-            <div class="modal-trigger">Register</div>
-          </label>
-          <input class="modal-state" id="modal-2" type="checkbox" />
-          <div class="modal-fade-screen">
-            <div class="modal-inner">
-              <div class="modal-close" for="modal-2"></div>
-              <h1>Register</h1>
-              <p class="modal-intro">Registration form</p>
-            </div>
-          </div>
-        </div></li>
-        </ul>
-    </div>
+<!--Create Account-->
 
+<%= render partial: "tutors/tutor_registration", locals: {tutor: @tutor } %></p>
+
+<%= link_to "Tutor Register Hard Code", new_tutor_path %>
+ <%= link_to "Logout", welcome_logout_path %></span>
 
 <!-- <span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span> -->
 
