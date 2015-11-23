@@ -7,7 +7,7 @@
  // /* Search Background*/
 .search-background {
    background-image: url("https://images.unsplash.com/photo-1447968954315-3f0c44f7313c?dpr=2&fit=crop&fm=jpg&h=850&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1450");
-   padding-bottom: 15%;
+   padding-bottom: 5%;
    opacity: 0.8;
   }
 
@@ -21,7 +21,7 @@
          text-transform: uppercase;
          padding: 10px 15px;
          margin: 20px auto;
-         margin-right: 29em;
+         margin-right: 23em;
          color: #ccc;
          background-color: #555;
          background: -webkit-linear-gradient(#888, #555);
@@ -45,7 +45,7 @@
           border-radius: 2%;
           position: relative;
           top: 71px;
-          left: 490px;
+          left: -20px;
           font-size: 24px;
           text-align: center;
       }
@@ -65,4 +65,52 @@
       a.popular {
           color: black;
           font-weight: bold;
+      }
+
+      // About //
+      .about {
+        font-family: 'Shadows Into Light Two', cursive;
+        font-size: 3rem;
+        text-align: center;
+      }
+
+      .about p {
+        font-size: 2rem;
+      }
+
+      // Services//
+      .services {
+        background-color: bisque;
+      }
+
+      .flex-container{
+          height: auto;
+          display: flex;
+          flex-flow: row nowrap;
+          padding-bottom: 0%;
+          justify-content: space-around;
+          list-style: none;
+          text-align: center;
+
+        }
+
+
+      .list-services{
+        margin: 0;
+        padding-top: 0;
+      }
+
+      img.payment, img.tutor-search {
+        height: 11rem;
+      }
+
+      //Footer//
+      .footer {
+        background-color: gray;
+        padding-top: 5%;
+        padding-bottom: 5%;  
+      }
+
+      .footer p {
+        text-align: center;
       }

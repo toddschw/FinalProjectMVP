@@ -5,56 +5,74 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-<%= link_to "Home", welcome_path %>
-<% if current_tutor %>
-  | Logged in as tutor <%= current_tutor.name %>
-  <%= image_tag current_tutor.picurl, width:30 %>
+<header>
+  <a href="http://s71.photobucket.com/user/Mary_Gualtieri/media/tutrd2%20copy_zps5ws0mucv.jpg.html" target="_blank"><img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd2%20copy_zps5ws0mucv.jpg" border="0" alt=" photo tutrd2 copy_zps5ws0mucv.jpg"/></a>
+</header>
 
-<% end %>
-<span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span>
+  <div id="nav-wrap">
+      <ul class="navbar split">
+        <li><%= link_to "Home", welcome_path %>
+        <% if current_tutor %>
+          | Logged in as tutor <%= current_tutor.name %>
+          <%= image_tag current_tutor.picurl, width:30 %>
 
-<span style="float:right;">
-  <%= link_to "Tutor Register", new_tutor_path %> |
-  <%= link_to "Tutor Log In", new_session_path %> |
-  <%= link_to "Logout", welcome_logout_path %>
-
-</span>
-<hr>
-
-
-<!--Login-->
-<div class="modal">
-  <label for="modal-1">
-    <div class="modal-trigger">Login</div>
-    <%= link_to "Tutor Register", new_tutor_path %>
-  </label>
-  <input class="modal-state" id="modal-1" type="checkbox" />
-  <div class="modal-fade-screen">
-    <div class="modal-inner">
-      <div class="modal-close" for="modal-1"></div>
-      <h1>Login</h1>
-      <p class="modal-intro"><%= render "sessions/new" %></p>
-  </div>
-</div>
+        <% end %></li>
 
 <!--Create Account-->
-<div class="modal">
-  <label for="modal-2">
-    <div class="modal-trigger">Register</div>
-    <%= link_to "Tutor Register", new_tutor_path %>
-  </label>
-  <input class="modal-state" id="modal-2" type="checkbox" />
-  <div class="modal-fade-screen">
-    <div class="modal-inner">
-      <div class="modal-close" for="modal-2"></div>
-      <h1>Register</h1>
-      <p class="modal-intro"><%= render "sessions/new" %></p>
-  </div>
-</div>
+        <li><div class="modal">
+          <label for="modal-1">
+            <div class="modal-trigger">Login</div>
+          </label>
+          <input class="modal-state" id="modal-1" type="checkbox" />
+          <div class="modal-fade-screen">
+            <div class="modal-inner">
+              <div class="modal-close" for="modal-1"></div>
+              <h1>Login</h1>
+              <p class="modal-intro"><%= render "sessions/new" %></p>
+          </div>
+        </div></li>
 
+<!--Login-->
+        <li><div class="modal">
+          <label for="modal-2">
+            <div class="modal-trigger">Register</div>
+          </label>
+          <input class="modal-state" id="modal-2" type="checkbox" />
+          <div class="modal-fade-screen">
+            <div class="modal-inner">
+              <div class="modal-close" for="modal-2"></div>
+              <h1>Register</h1>
+              <p class="modal-intro">Registration form</p>
+            </div>
+          </div>
+        </div></li>
+        </ul>
+    </div>
+
+
+<!-- <span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span> -->
+
+<!-- <span style="float:right;">
+  <%= link_to "Tutor Register", new_tutor_path %> |
+  <%= link_to "Tutor Log In", new_session_path %> | -->
+
+
+</span>
+
+
+
+
+
+
+
+
+
+</ul>
+<hr>
 <%= yield %>
 
 </body>
