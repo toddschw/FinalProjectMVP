@@ -20,6 +20,7 @@ class TutorsController < ApplicationController
     # render plain: params.to_json
     @tutor = Tutor.new
     @subjects = Subject.all
+    @subject = Subject.new
 
 
     if !params[:token].nil?

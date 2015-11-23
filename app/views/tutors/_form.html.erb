@@ -21,15 +21,8 @@ end %>
     </div>
   <% end %>
 
-  <!-- LOOP through subjects -->
-  <!-- use second form_for -->
-  <p>What subjects do you teach?</p>
-  <div class="field">
-    <% @subjects.each do |subject| %>
-      <%= check_box_tag(:subject_id) %>
-      <%= label_tag(:subject_id, subject.expertise) %>
-  <% end %>
-  </div>
+
+
 
 
 <div class="field">
@@ -68,5 +61,7 @@ end %>
   </div>
   <div class="actions">
     <%= f.submit %>
+
+
   </div>
 <% end %>
