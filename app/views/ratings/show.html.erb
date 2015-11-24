@@ -1,24 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Review:</strong>
-  <%= @rating.review %>
+Thanks for submitting a review!
 </p>
 
-<p>
-  <strong>Pencils:</strong>
-  <%= @rating.pencils %>
-</p>
+<% @tutor.inspect %>
 
-<p>
-  <strong>Name of reviewer:</strong>
-  <%= @rating.name_of_reviewer %>
-</p>
-
-<p>
-  <strong>Tutor:</strong>
-  <%= @rating.tutor %>
-</p>
-
-<%= link_to 'Edit', edit_rating_path(@rating) %> |
 <%= link_to 'Back', ratings_path %>

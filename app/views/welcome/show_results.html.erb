@@ -1,17 +1,21 @@
+
+
 <% if @subjects == false %>
   You didn't put anything in the search box.
 <% else %>
   <%# a valid search was entered. Either show results or nothing found msg %>
   <%# test for no results first %>
-  <% if @subjects.empty? %>
-    Sorry, no tutors found...
-  <% else %>  <%# Results were found, display them %>
     <% @subjects.each do |subject| %>
+      <% if subject.tutors.empty? %>
+       <%= "no tutors found" %>
+
+       <% else %>
+
+
     <p><u><%= subject.expertise %> Tutors</u><br>
       <% subject.tutors.each do |tutor| %>
       <strong>Tutor Name:</strong> <%= tutor.name %><br>
       <strong>Location:</strong> <%= tutor.city %><br>
-      <!-- <strong>Profile picture:</strong> <%= image_tag(tutor.picurl, width:18) %><br> -->
       <strong>Rating:</strong>
        <% num_reviewers = 0 %>
        <% total_stars = 0 %>
@@ -21,6 +25,7 @@
        <% end %>
            <% if num_reviewers > 0 %>
             <% avg_rating = (total_stars.to_d / num_reviewers.to_d).to_d %>
+            <% avg_rating = number_with_precision(avg_rating, precision: 2) %>
             <% avg_rating = avg_rating.to_s + " stars (out of 5)" %>
            <% else %>
             <% avg_rating = "No ratings yet" %>
@@ -31,9 +36,8 @@
        <% tutor_href= "/tutors/"  + tutor.id.to_s %>
        <%# use link_to %>
        <%= link_to "See Full Profile", tutor_href, id: 'tutor_modal' %><br><br>
-
+       <% end %>
       <% end %>
-    <% end %>
     <%# Closes Results were found loop  %>
 
   <% end %> <%# Closes no results found  %>

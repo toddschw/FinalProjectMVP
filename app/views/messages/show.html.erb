@@ -1,24 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Back to Profile', tutor_path(@message.tutor) %>
+
+<h2>Message detail:</h2>
+
 <p>
-  <strong>From:</strong>
+  <strong>Your Name:</strong>
   <%= @message.from %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>Your Email:</strong>
   <%= @message.email %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>Message:</strong>
   <%= @message.body %>
 </p>
-
-<p>
-  <strong>Tutor:</strong>
-  <%= @message.tutor %>
-</p>
-
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>

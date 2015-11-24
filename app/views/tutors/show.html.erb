@@ -27,10 +27,60 @@
 </p>
 
 <p>
-  <strong>Reviews</strong><Br>
-  <% @ratings.each do |rating| %>
-    Comment: <%= rating.review %><br>
-    Stars: <%= rating.pencils %>/5<br>
-    - <%= rating.name_of_reviewer %><br><br>
-  <% end %>
+  <strong>Reviews</strong>
+
+    <% unless @ratings.empty? %>
+
+    <table border="1">
+      <strong><th>Reviewer</th></strong>
+      <strong><th>Says</th></strong>
+      <strong><th>Number of Pencils</th></strong>
+
+      <tr>
+        <% @ratings.each do |rating| %>
+        <td><%= rating.name_of_reviewer %></td>
+        <td><%= rating.review %></td>
+        <td><%= rating.pencils %></td>
+      </tr>
+      <% end %>
+    </table>
+
+    <% else %><br>
+    <%= "No ratings yet." %>
+    <% end %>
 </p>
+
+<strong>Add a Review</strong> <Br>
+  <%= form_for(@rating) do |f| %>
+    <% if @rating.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+
+        <ul>
+        <% @rating.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :review %><br>
+      <%= f.text_field :review %>
+    </div>
+    <div class="field">
+      <%= f.label "Number of Pencils (max 5)" %><br>
+      <%= f.number_field :pencils %>
+    </div>
+    <div class="field">
+      <%= f.label "your name" %><br>
+      <%= f.text_field :name_of_reviewer %>
+    </div>
+    <div class="field">
+
+      <%= f.hidden_field :tutor_id, value: @tutor.id %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
