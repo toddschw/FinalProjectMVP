@@ -5,12 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
 <header>
-  <a href="http://s71.photobucket.com/user/Mary_Gualtieri/media/tutrd2%20copy_zps5ws0mucv.jpg.html" target="_blank"><img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd2%20copy_zps5ws0mucv.jpg" border="0" alt=" photo tutrd2 copy_zps5ws0mucv.jpg"/></a>
+  <img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd6_zpssgq3lx4w.jpg" border="0" alt=" photo tutrd6_zpssgq3lx4w.jpg"/></a>
 </header>
 
   <div id="nav-wrap">
@@ -39,10 +39,10 @@
 
 <!--Create Account-->
 
-<%= render partial: "tutors/tutor_registration", locals: {tutor: @tutor } %></p>
+<%= render partial: "tutors/tutor_registration", locals: {tutor: @tutor } %>
 
-<%= link_to "Tutor Register Hard Code", new_tutor_path %>
- <%= link_to "Logout", welcome_logout_path %></span>
+<!-- <%= link_to "Tutor Register Hard Code", new_tutor_path %>
+ <%= link_to "Logout", welcome_logout_path %></span> -->
 
 <!-- <span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span> -->
 
@@ -59,11 +59,16 @@
 
 
 
-
-
 </ul>
 <hr>
+
 <%= yield %>
+<!--Footer-->
+<div class="footer">
+  <p>Copyright &copy; Tutrd, LLC</p>
+  <div>
+
+
 
 </body>
 </html>

@@ -3,15 +3,45 @@
 @import "welcome";
 
 
+
+  $parallax-window-height: 30em;
+  $parallax-background-height: $parallax-window-height * 2;
+
+  .parallax-window {
+    max-height: $parallax-window-height;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+
+  .parallax-static-content {
+    color: #9A9A8A;
+    padding: 8em 0;
+    position: relative;
+    z-index: 9;
+  }
+
+  .parallax-background {
+    background-image: url("https://images.unsplash.com/photo-1447968954315-3f0c44f7313c?dpr=2&fit=crop&fm=jpg&h=850&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1450");
+    background-position: top;
+    background-size: cover;
+    background-color: beige;
+    height: $parallax-background-height;
+    left: 0;
+    position: absolute;
+    top: - $parallax-window-height / 3;
+    width: 100%;
+  }
+
 // Header Image //
 header {
     text-align: center;
+    background-color: #990012;
 }
 
 // NAV BAR //
-  div#nav-wrap {
-    margin-top: -5%;
-  }
+
 
   .split li:first-child {
   float: left;
@@ -43,7 +73,9 @@ header {
   position: relative;
   text-align: center;
   list-style: none;
-  font: normal bold 12px/1.2em Helvetica;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
   padding: 0;
   margin: 0;
   background-color: #000;
@@ -261,3 +293,15 @@ header {
   form {
     text-align: CENTER;
 }
+
+  //Footer//
+  .footer {
+    background-color: gray;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .footer p {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+  }

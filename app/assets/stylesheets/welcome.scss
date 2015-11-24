@@ -5,11 +5,11 @@
 
 
  // /* Search Background*/
-.search-background {
-   background-image: url("https://images.unsplash.com/photo-1447968954315-3f0c44f7313c?dpr=2&fit=crop&fm=jpg&h=850&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1450");
-   padding-bottom: 5%;
-   opacity: 0.8;
-  }
+// .search-background {
+//    background-image: url("https://images.unsplash.com/photo-1447968954315-3f0c44f7313c?dpr=2&fit=crop&fm=jpg&h=850&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1450");
+//    padding-bottom: 5%;
+//    opacity: 0.8;
+//   }
 
 
        /*Search Button*/
@@ -32,10 +32,12 @@
          box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
          cursor: pointer;
          box-shadow: 0.5px 0.5px 0.5px white;
+         font-family: 'Lato', sans-serif;
        }
 
        input[type="submit"] {
          margin: auto;
+         font-family: 'Lato', sans-serif;
        }
 
        input[type="submit"] {
@@ -57,6 +59,7 @@
           left: -20px;
           font-size: 24px;
           text-align: center;
+          font-family: 'Lato', sans-serif;
       }
 
       /*Line Under Subjects*/
@@ -65,31 +68,64 @@
           color: black;
           font-size: 30px;
           text-align: center;
+          font-family: 'Lato', sans-serif;
       }
 
       .subjects {
           text-align: center;
+          font-family: 'Lato', sans-serif;
       }
 
       a.popular {
           color: black;
           font-weight: bold;
+          font-family: 'Lato', sans-serif;
       }
 
       // About //
       .about {
-        font-family: 'Shadows Into Light Two', cursive;
+        font-family: 'Lato', sans-serif;
         font-size: 3rem;
         text-align: center;
       }
 
       .about p {
-        font-size: 2rem;
+        font-size: 25px;
       }
+
+      // Video //
+      .video {
+        text-align: center;
+        margin-top: 4%;
+        margin-bottom: 4%;
+      }
+
+      // .video-wrapper {
+      //   height: 0;
+      //   overflow: hidden;
+      //   padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+      //   position: relative;
+      //
+      //   embed,
+      //   object,
+      //   iframe {
+      //       // @include position(absolute, 0px null null 0px);
+      //     // @include size(100%);
+      //   }
+      // }
+      //
+      // .video-wrapper iframe {
+      //     position: absolute;
+      //     top: 0px;
+      //     left: 0px;
+      //     height: 50%;
+      //     width: 50%;
+      //   }
 
       // Services//
       .services {
-        background-color: bisque;
+        background-color: #990012;
+        font-family: 'Lato', sans-serif;
       }
 
       .flex-container{
@@ -113,13 +149,6 @@
         height: 11rem;
       }
 
-      //Footer//
-      .footer {
-        background-color: gray;
-        padding-top: 5%;
-        padding-bottom: 5%;
-      }
 
-      .footer p {
-        text-align: center;
-      }
+
+      // Search Results //
