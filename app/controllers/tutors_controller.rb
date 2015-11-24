@@ -32,16 +32,21 @@ class TutorsController < ApplicationController
 
   # GET /tutors/1/edit
   def edit
+    @edit = true
+    @subjects = @tutor.subjects  # used to differentiate _form
   end
 
   # POST /tutors
   # POST /tutors.json
   def create
-
-    render plain: params
-
+    render plain: params.to_json
     # @tutor = Tutor.new(tutor_params)
-    #
+    # #
+    # params[:tutor][:subject_ids].each do |sid|
+    #   if sid.present?
+    #     @tutor.subjects << Subject.find(sid)
+    #   end
+    # end
     #
     # if @tutor.save
     #   redirect_to welcome_path
@@ -97,6 +102,9 @@ class TutorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutor_params
-      params.require(:tutor).permit(:name, :city, :bio, :picurl, :rate, :email, :username, :password)
+      params.require(:tutor).permit(
+      :name, :city, :bio, :picurl,
+      :rate, :email, :username,
+      :password, :subject_ids)
     end
 end

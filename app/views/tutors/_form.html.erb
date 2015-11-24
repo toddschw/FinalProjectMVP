@@ -1,5 +1,8 @@
 
 <% if @fb_info
+  # This doesn't belong in the view
+  # if you need to format stuff, it goes in the controller for now
+  # This might be an opprtunity for later refactoring using the Presenter pattern.
  fb_new_tutor = JSON.parse(@fb_info)
  fb_email = fb_new_tutor["email"]
  fb_name = fb_new_tutor["name"]
@@ -21,12 +24,17 @@ end %>
     </div>
   <% end %>
 
+<div class="field">
+  <%= f.label :subjects %>
+  <%# [ ["math", 1], ["english", 2]] %>
+  <%# if new tutor %>
+  <%= f.select :subject_ids, @subjects.map { |s| [s.expertise, s.id] }, {}, multiple: true %>
 
 
-
+</div>
 
 <div class="field">
-  <%= f.label :username %>
+  <%= f.label "Create a username" %>
   <%= f.text_field :username %>
 </div>
 <div class="field">
