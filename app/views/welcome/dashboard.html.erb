@@ -1,9 +1,11 @@
 <h1>Welcome back, <%= current_tutor.name %></h1>
 
 <h2>Expertise:</h2>
+<% his_subjects = "" %>
 <% current_tutor.subjects.each do |subject| %>
-  <%= subject.expertise %>
+  <% his_subjects << subject.expertise << ", " %>
 <% end %>
+<%= his_subjects.chomp(', ') %>
 
 <h2>Your Hourly Rate:</h2>
 <%= number_to_currency(current_tutor.rate) %>
@@ -24,4 +26,4 @@
 </table>
 
 <h2>Edit Your Profile:</h2>
-<%= render 'form' %>
+<%= link_to "link not working yet", "#" %>

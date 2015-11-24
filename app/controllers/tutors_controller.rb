@@ -39,20 +39,21 @@ class TutorsController < ApplicationController
   # POST /tutors
   # POST /tutors.json
   def create
-    render plain: params.to_json
-    # @tutor = Tutor.new(tutor_params)
-    # #
-    # params[:tutor][:subject_ids].each do |sid|
-    #   if sid.present?
-    #     @tutor.subjects << Subject.find(sid)
-    #   end
-    # end
-    #
-    # if @tutor.save
-    #   redirect_to welcome_path
-    # else
-    #   render action: 'new'
-    # end
+    # render plain: params.to_json
+    @tutor = Tutor.new(tutor_params)
+
+    params[:tutor][:subject_ids].each do |sid|
+      if sid.present?
+        @tutor.subjects << Subject.find(sid)
+      end
+    end
+
+    if @tutor.save
+      redirect_to new_session_path
+      flash[:please_login] = "Your registration was successful!\nPlease log in:"
+    else
+      render action: 'new'
+    end
 
     # respond_to do |format|
     #   if @tutor.save
