@@ -54,18 +54,19 @@
           width: 400px;
           height: 57px;
           border-radius: 2%;
-          position: relative;
+          // position: relative;
           top: 71px;
           left: -20px;
           font-size: 24px;
           text-align: center;
           font-family: 'Lato', sans-serif;
+          color: white;
       }
 
       /*Line Under Subjects*/
 
       h3 {
-          color: black;
+          color: white;
           font-size: 30px;
           text-align: center;
           font-family: 'Lato', sans-serif;
@@ -77,9 +78,14 @@
       }
 
       a.popular {
-          color: black;
+          color: white;
           font-weight: bold;
           font-family: 'Lato', sans-serif;
+      }
+
+      // Logo//
+      .crest {
+        text-align: center;
       }
 
       // About //
@@ -87,6 +93,9 @@
         font-family: 'Lato', sans-serif;
         font-size: 3rem;
         text-align: center;
+        background-color: zz;
+        padding-bottom: 2px;
+        padding-top: 1px;
       }
 
       .about p {
@@ -100,27 +109,6 @@
         margin-bottom: 4%;
       }
 
-      // .video-wrapper {
-      //   height: 0;
-      //   overflow: hidden;
-      //   padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
-      //   position: relative;
-      //
-      //   embed,
-      //   object,
-      //   iframe {
-      //       // @include position(absolute, 0px null null 0px);
-      //     // @include size(100%);
-      //   }
-      // }
-      //
-      // .video-wrapper iframe {
-      //     position: absolute;
-      //     top: 0px;
-      //     left: 0px;
-      //     height: 50%;
-      //     width: 50%;
-      //   }
 
       // Services//
       .services {
@@ -148,7 +136,3 @@
       img.payment, img.tutor-search {
         height: 11rem;
       }
-
-
-
-      // Search Results //
