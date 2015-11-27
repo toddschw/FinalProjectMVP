@@ -11,7 +11,8 @@ class TutorsController < ApplicationController
   # GET /tutors/1.json
   def show
     @subjects = @tutor.subjects
-    @ratings = @tutor.ratings
+    @ratings = @tutor.ratings.order(created_at: :desc)
+    @rating = Rating.new
   end
 
   # GET /tutors/new
@@ -19,6 +20,9 @@ class TutorsController < ApplicationController
 
     # render plain: params.to_json
     @tutor = Tutor.new
+    @subjects = Subject.all
+    @subject = Subject.new
+
 
     if !params[:token].nil?
       # @fb_info = Tutor.profile(params[:token])
@@ -29,15 +33,25 @@ class TutorsController < ApplicationController
 
   # GET /tutors/1/edit
   def edit
+    @edit = true
+    @subjects = @tutor.subjects  # used to differentiate _form
   end
 
   # POST /tutors
   # POST /tutors.json
   def create
+    # render plain: params.to_json
     @tutor = Tutor.new(tutor_params)
 
+    params[:tutor][:subject_ids].each do |sid|
+      if sid.present?
+        @tutor.subjects << Subject.find(sid)
+      end
+    end
+
     if @tutor.save
-      redirect_to welcome_path, notice: "Created tutor"
+      redirect_to new_session_path
+      flash[:please_login] = "Your registration was successful!\nPlease log in:"
     else
       render action: 'new'
     end
@@ -90,6 +104,9 @@ class TutorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutor_params
-      params.require(:tutor).permit(:name, :city, :bio, :picurl, :rate, :email, :username, :password)
+      params.require(:tutor).permit(
+      :name, :city, :bio, :picurl,
+      :rate, :email, :username,
+      :password, :subject_ids)
     end
 end

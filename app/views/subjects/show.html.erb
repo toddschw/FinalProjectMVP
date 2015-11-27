@@ -5,14 +5,4 @@
   <%= @subject.expertise %>
 </p>
 
-
-<p>
-  <strong>Tutors</strong>
-  <% @subject.tutors.each do |tutor| %>
-      <%= tutor.name  %><br>
-  <% end %>
-</p>
-
-
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
+<%= link_to 'Back to Register', new_tutor_path %> 

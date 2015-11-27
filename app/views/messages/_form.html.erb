@@ -12,20 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :from %><br>
+    <%= f.label "Your Name" %><br>
     <%= f.text_field :from %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
+    <%= f.hidden_field :tutor_id, :value => @tutor.id %>
+  </div>
+  <div class="field">
+    <%= f.label "Your Email" %><br>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :body %><br>
+    <%= f.label "Message" %><br>
     <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :tutor_id %><br>
-    <%= f.text_field :tutor_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

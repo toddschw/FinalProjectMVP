@@ -1,5 +1,8 @@
 
 <% if @fb_info
+  # This doesn't belong in the view
+  # if you need to format stuff, it goes in the controller for now
+  # This might be an opprtunity for later refactoring using the Presenter pattern.
  fb_new_tutor = JSON.parse(@fb_info)
  fb_email = fb_new_tutor["email"]
  fb_name = fb_new_tutor["name"]
@@ -21,19 +24,29 @@ end %>
     </div>
   <% end %>
 
+<div class="field">
+  <%= f.label :subjects %>
+  <%# [ ["math", 1], ["english", 2]] %>
+  <%# if new tutor %>
+  <%= f.select :subject_ids, @subjects.map { |s| [s.expertise, s.id] }, {}, multiple: true %>
+</div>
+
+<p><%= link_to "Add a subject", new_subject_path %></p>
+
+<div class="field">
+  <%= f.label "Create a username" %>
+  <%= f.text_field :username %>
+</div>
+<div class="field">
+  <%= f.label "Choose a Password" %>
+  <%= f.password_field :password %>
+</div>
+
+
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name, :value => "#{fb_name}" %>
   </div>
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-
   <div class="field">
     <%= f.label :email %>
     <%= f.text_field :email, :value => "#{fb_email}" %>
@@ -56,5 +69,7 @@ end %>
   </div>
   <div class="actions">
     <%= f.submit %>
+
+
   </div>
 <% end %>

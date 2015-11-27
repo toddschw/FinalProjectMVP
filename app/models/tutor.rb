@@ -2,6 +2,7 @@ require 'open-uri'
 
 class Tutor < ActiveRecord::Base
   validates :password, length: { minimum: 8 }
+  validates :username, presence: true
 
   has_many :topics
   has_many :subjects, through: :topics

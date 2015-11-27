@@ -21,3 +21,23 @@
 //     alert("you clicked a tutor!");
 //   });
 // });
+// $(document).on("ready page:load", function(){
+//       $( "#dialog" ).click(function(e){
+//       e.preventDefault();
+//     });
+// });
+
+
+
+$(function() {
+
+  $( "#q" ).focus(function() {
+    var default_value = this.value;
+    if(this.value == default_value) {
+      this.value = '';
+    }
+  });
+
+
+
+});
