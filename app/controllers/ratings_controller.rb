@@ -24,6 +24,7 @@ class RatingsController < ApplicationController # should be nested under Tutor
   # POST /ratings
   # POST /ratings.json
   def create
+  
     @rating = Rating.new(rating_params)
     @rating.save
     @tutor = @rating.tutor

@@ -25,6 +25,7 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
+    
     @message = Message.new(message_params)
 
     respond_to do |format|
