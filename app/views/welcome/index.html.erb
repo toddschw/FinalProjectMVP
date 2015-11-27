@@ -1,6 +1,6 @@
 
 <%= flash[:tutor_created] %>
-
+<!-- 
 <h1 id="baz">Welcome to TutorED (v1.0)!</h1>
 
 <h3 id="bar">What subject do you want to learn?</h3>
@@ -13,3 +13,74 @@
 <% @subjects.each do |subject| %>
   <a href="/welcome/results?q=<%= subject.expertise %>"><%= subject.expertise %></a>&nbsp;
 <% end %>
+
+
+
+<div class="parallax-container">
+   <div class="parallax"><img src="https://images.unsplash.com/photo-1447968954315-3f0c44f7313c?dpr=2&fit=crop&fm=jpg&h=850&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1450">
+</div> -->
+
+
+<!-- SEARCH BAR -->
+<div class="search-background">
+  <div class="search">
+    <!-- <h3>What subject do you want to learn?</h3> -->
+    <%= form_tag("/welcome/results", method: "get") do %>
+      <%= text_field_tag :q, "Search for a Tutor" %>
+      <%= submit_tag("Search") %>
+    <% end %>
+</div>
+
+  <div class="subjects">
+
+<h3>Subjects to consider: </h3>
+<% @subjects.each do |subject| %>
+  <a href="/welcome/results?q=<%= subject.expertise %>" class="popular"><%= subject.expertise %></a>&nbsp;
+<% end %>
+</div>
+</div>
+
+ </div>
+
+<!--LOGO-->
+<div class="crest">
+  <img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd_crest_zpst0bjfzue.jpg" border="0" alt=" photo tutrd_crest_zpst0bjfzue.jpg" id="crest"/></a>
+</div>
+<!-- ABOUT US -->
+<div class="about">
+
+  <h3><u>Who is TUTRD?</u></h3>
+  <p>TUTRD is an application that solves this problem by quickly, easily and efficiently connecting tutors and students based on location, subject, availability, price range and reviews. We effectivity cut out the middle man, saving the student thousands and effectively raising tutor pay creating a symbiotic relationship between student and tutor happiness.</p>
+
+</div>
+
+
+<div class="video">
+  <div class="video-wrapper">
+
+
+  <iframe src="https://player.vimeo.com/video/146690941" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/146690941"></a></p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<!--Services-->
+<div class="services">
+  <h1>Testimonials:</h1>
+  <div class="flex-container">
+        <div class = "list-services" >
+          <img src="https://cdn2.iconfinder.com/data/icons/medicine-7/512/card_reader-2-128.png" alt="payment" class="payment">
+          <li>Payment Processing</li>
+        </div>
+
+        <div class="list-services">
+          <img src="https://cdn1.iconfinder.com/data/icons/education-set-02/512/finduser-512.png" atl="tutor-search" class="tutor-search" >
+          <li>Comprehensive Tutor Search</li>
+        </div>
+      </div>
+</div>
