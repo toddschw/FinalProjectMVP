@@ -21,6 +21,7 @@ class TutorsController < ApplicationController
     # render plain: params.to_json
     @tutor = Tutor.new
     @subjects = Subject.all
+
     @subject = Subject.new
 
 
@@ -42,6 +43,8 @@ class TutorsController < ApplicationController
   def create
     # render plain: params.to_json
     @tutor = Tutor.new(tutor_params)
+
+    @subjects = Subject.all
 
     params[:tutor][:subject_ids].each do |sid|
       if sid.present?
