@@ -2,36 +2,113 @@
 
 
 <!-- SEARCH BAR -->
-<div class="search-background">
-  <div class="search">
-    <!-- <h3>What subject do you want to learn?</h3> -->
-    <%= form_tag("/welcome/results", method: "get") do %>
-      <%= text_field_tag :q, "Search for a Tutor" %>
-      <%= submit_tag("Search") %>
-    <% end %>
 
-  <div class="subjects">
+
+<div id="js-parallax-window" class="parallax-window">
+ <div class="parallax-static-content">
+   <b>Parallax Window</b>
+
+<div class="search">
+ <!-- <h3>What subject do you want to learn?</h3> -->
+ <%= form_tag("/welcome/results", method: "get") do %>
+   <%= text_field_tag :q, "Search for a Tutor" %>
+   <%= submit_tag("Search") %>
+ <% end %>
+
+</div>
+
+<div class="subjects">
 
 <h3>Subjects to consider: </h3>
 <% @subjects.each do |subject| %>
-  <a href="/welcome/results?q=<%= subject.expertise %>" class="popular"><%= subject.expertise %></a>&nbsp;
+<a href="/welcome/results?q=<%= subject.expertise %>" class="popular"><%= subject.expertise %></a>&nbsp;
 <% end %>
 </div>
+
+</div>
+<div id="js-parallax-background" class="parallax-background"></div>
 </div>
 
 
+
+
+<!--LOGO-->
+<div class="flex-container">
+  <div class="crest">
+  <img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd_crest_zpst0bjfzue.jpg" border="0" alt=" photo tutrd_crest_zpst0bjfzue.jpg" id="crest"/></a>
+  </div>
+</div>
 <!-- ABOUT US -->
 <div class="about">
-  <p>Tutrd connects Tutors and Students in unique way.</p>
+  <p>TUTRD is an application that solves this problem by quickly, easily and efficiently connecting tutors and students based on location, subject, availability, price range and reviews. We effectivity cut out the middle man, saving the student thousands and effectively raising tutor pay creating a symbiotic relationship between student and tutor happiness.</p>
+
 </div>
 
 
+<div class="video">
+  <div class="video-wrapper">
+
+
+  <iframe src="https://player.vimeo.com/video/146690941" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/146690941"></a></p>
+
+
+    </div>
+  </div>
+
+
+
+
+
+<!--Services-->
 <div class="services">
-  <ul>
-    <li>Payment Processing</li>
-    <li>Comprehensive Tutor Search</li>
-  </ul>
-</div>
+  <h1>Testimonials:</h1>
+  <!-- <div class="flex-container">
+        <div class = "list-services" >
+          <img src="https://cdn2.iconfinder.com/data/icons/medicine-7/512/card_reader-2-128.png" alt="payment" class="payment">
+          <li>Payment Processing</li>
+        </div>
 
-<div class="footer">
-  <div>
+        <div class="list-services">
+          <img src="https://cdn1.iconfinder.com/data/icons/education-set-02/512/finduser-512.png" atl="tutor-search" class="tutor-search" >
+          <li>Comprehensive Tutor Search</li>
+        </div>
+      </div>
+</div> -->
+
+<div class="cards">
+  <div class="card">
+    <div class="card-image">
+      <!-- <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt=""> -->
+    </div>
+    <div class="card-header">
+      First Card
+    </div>
+    <div class="card-copy">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png" alt="">
+    </div>
+    <div class="card-header">
+      Another Card
+    </div>
+    <div class="card-copy">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-image">
+      <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png" alt="">
+    </div>
+    <div class="card-header">
+      The Last Card
+    </div>
+    <div class="card-copy">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+  </div>
+</div>

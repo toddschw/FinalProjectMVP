@@ -5,25 +5,54 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css"> -->
 </head>
 <body>
+  <%= render "nav" %>
 
-<%= link_to "Home", welcome_path %>
-<% if current_tutor %>
-  | Logged in as tutor <%= current_tutor.name %>
-  <%= image_tag current_tutor.picurl, width:30 %>
+<div class="flex-container">
+  <header>
+    <img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd6_zpssgq3lx4w.jpg" border="0" alt=" photo tutrd6_zpssgq3lx4w.jpg"/></a>
+  </header>
+</div>
 
-<% end %>
-<span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span>
+<div class="menu">
+  <!--Login-->
 
-<span style="float:right;">
-  <%= link_to "Tutor Register", new_tutor_path %> |
-  <%= link_to "Tutor Log In", new_session_path %> |
-  <%= link_to "Logout", welcome_logout_path %></span>
-<hr>
+  <div class="modal" id="login-modal">
+    <label for="modal-1">
+      <div class="modal-trigger">Login</div>
+    </label>
+    <input class="modal-state" id="modal-1" type="checkbox" />
+    <div class="modal-fade-screen js-modal-1-close">
+      <div class="modal-inner">
+        <div class="modal-close js-modal-1-close" for="modal-1"></div>
+        <h1>Login</h1>
+        <p class="modal-intro">
+          <%= render "sessions/new" %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--Create Account-->
+
+
+  <%= render partial: "tutors/tutor_registration", locals: {tutor: @tutor } %>
+</div>
+
 
 
 <%= yield %>
+<!--Footer-->
+<div class="footer">
+  <p>Copyright &copy; Tutrd, LLC.</p>
+  <div>
+
+
 
 </body>
 </html>

@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   def current_tutor
     @current_tutor ||= Tutor.find_by(id: session[:tutor_id])
   end
-  
+
+  @tutor_foo = Tutor.new
 
 end

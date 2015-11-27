@@ -1,10 +1,12 @@
 class WelcomeController < ApplicationController
   def index
+    @tutor = Tutor.new
     @subjects = Subject.all
   end
 
   def show_results
     #render plain: params.to_json
+   @tutor = Tutor.new
     @subjects = Subject.search(params[:q])
     @q = params[:q]
     # if @subjects

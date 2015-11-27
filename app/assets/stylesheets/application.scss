@@ -1,0 +1,453 @@
+// @import "normalize";
+// @import "bourbon";
+// @import "neat";
+
+
+@import "bourbon";
+@import "neat";
+@import 'normalize';
+// @import "materialize/components/color";
+// X  $primary-color: color("blue", "lighten-2") !default;
+@import 'materialize';
+@import "welcome";
+
+
+nav {
+    color: #fff;
+    background-color: #000000;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+}
+
+ .menu#nav {
+   display: inline;
+   color: #fff;
+   background-color: #000000;
+   width: 100%;
+   height: 56px;
+   line-height: 56px;
+
+ }
+
+
+
+
+// Header Image //
+header {
+    text-align: center;
+    background-color: #990012;
+}
+
+// NAV BAR //
+
+
+header.navigation {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $large-screen: em(860) !default;
+  $navigation-padding: 1em;
+  $navigation-background: $dark-gray;
+  $navigation-color: transparentize(white, 0.3);
+  $navigation-color-hover: white;
+  $navigation-height: 60px;
+  $navigation-nav-button-background: $action-color;
+  $navigation-nav-button-background-hover: lighten($navigation-background, 10%);
+  $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20%);
+  $navigation-search-background: lighten($navigation-background, 5);
+  $navigation-search-border: 1px solid darken($navigation-background, 5);
+  $navigation-active-link-color: transparentize(white, 0.5);
+  $navigation-submenu-padding: 1em;
+  $navigation-submenu-width: 12em;
+  $horizontal-bar-mode: $large-screen;
+
+  background-color: $navigation-background;
+  border-bottom: 1px solid darken($navigation-background, 10);
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+
+  .navigation-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .logo {
+    float: left;
+    max-height: $navigation-height;
+    padding-left: $navigation-padding;
+    padding-right: 2em;
+
+    img {
+      max-height: $navigation-height;
+      padding: 0.8em 0;
+    }
+  }
+
+  // Mobile view
+
+  .navigation-menu-button {
+    color: $navigation-color;
+    display: block;
+    float: right;
+    line-height: $navigation-height;
+    margin: 0;
+    padding-right: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include media ($horizontal-bar-mode) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  // Nav menu
+
+  nav {
+    color: #fff;
+    background-color: #000000;
+    width: 100%;
+    float: none;
+    min-height: $navigation-height;
+    z-index: 9999999;
+
+    @include media ($horizontal-bar-mode) {
+      float: left;
+    }
+  }
+
+  ul.navigation-menu {
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 9999;
+
+    &.show {
+      display: block;
+    }
+
+    @include media ($horizontal-bar-mode) {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // The nav items
+
+  ul li.nav-link {
+    background: $navigation-background;
+    display: block;
+    line-height: $navigation-height;
+    overflow: hidden;
+    padding-right: 0.8em;
+    text-align: right;
+    width: 100%;
+    z-index: 9999;
+
+    @include media ($horizontal-bar-mode) {
+      background: transparent;
+      display: inline;
+      line-height: $navigation-height;
+      text-decoration: none;
+      width: auto;
+    }
+
+    a {
+      color: $navigation-color;
+      display: inline-block;
+      text-decoration: none;
+
+      @include media ($horizontal-bar-mode) {
+        padding-right: 1em;
+      }
+
+      &:focus,
+      &:hover {
+        color: $navigation-color-hover;
+      }
+    }
+  }
+
+  .active-nav-item a {
+    border-bottom: 1px solid $navigation-active-link-color;
+    padding-bottom: 3px;
+  }
+
+
+  // Elements on the far right
+
+  .navigation-tools {
+    background: #505050;
+    clear: both;
+    display: block;
+    height: $navigation-height;
+
+    @include media($horizontal-bar-mode) {
+      background: transparent;
+      clear: none;
+      float: right;
+    }
+  }
+
+  // Search bar
+
+  .search-bar {
+    $search-bar-border-color: $base-border-color;
+    $search-bar-border: 1px solid $search-bar-border-color;
+    $search-bar-background: lighten($search-bar-border-color, 10%);
+
+    float: left;
+    padding: 0.85em 0.85em 0.7em 0.6em;
+    width: 60%;
+
+    form {
+      position: relative;
+
+      input[type=search] {
+        @include box-sizing(border-box);
+        background: $navigation-search-background;
+        border-radius: $base-border-radius * 2;
+        border: $navigation-search-border;
+        color: $navigation-color;
+        font-size: 0.9em;
+        font-style: italic;
+        margin: 0;
+        padding: 0.5em 0.8em;
+        width: 100%;
+
+        @include media($horizontal-bar-mode) {
+          width: 100%;
+        }
+      }
+
+      button[type=submit] {
+        background: $navigation-search-background;
+        border: none;
+        bottom: 0.3em;
+        left: auto;
+        outline: none;
+        padding: 0 9px;
+        position: absolute;
+        right: 0.3em;
+        top: 0.3em;
+
+        img {
+          height: 12px;
+          opacity: 0.7;
+          padding: 1px;
+        }
+      }
+    }
+
+    @include media($horizontal-bar-mode) {
+      display: inline-block;
+      position: relative;
+      width: 16em;
+
+      input {
+        @include box-sizing(border-box);
+        display: block;
+      }
+    }
+  }
+}
+
+/* Parallax */
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    z-index: -1;
+}
+
+
+
+    /*Modal*/
+
+    .modal {
+    $base-border-color: #dcdcdc !default;
+    $base-border-radius: 3px !default;
+    $base-background-color: #fff !default;
+    $base-font-size: 1em !default;
+    $base-line-height: 1.5em !default;
+    $action-color: #477dca !default;
+    $dark-gray: #333 !default;
+    $light-gray: #ddd !default;
+    $medium-screen: em(640) !default;
+    $large-screen: em(860) !default;
+    $base-font-color: $dark-gray !default;
+    $modal-padding: 3em;
+    $modal-background: $base-background-color;
+    $modal-close-color: $light-gray;
+    $modal-image-height: 135px;
+    $modal-image-width: $modal-image-height;
+    $modal-trigger-image-width: 300px;
+
+    label {
+      cursor: pointer;
+      margin-bottom: 0;
+    }
+
+    label img {
+      border-radius: $modal-trigger-image-width / 2;
+      display: block;
+      max-width: $modal-trigger-image-width;
+    }
+
+    .modal-state {
+      display: none;
+    }
+
+    .modal-trigger {
+      padding: 0.8em 1em;
+    }
+
+    .modal-fade-screen { // overlay
+      @include transition(opacity 0.25s ease);
+      @include position(relative, 0);
+      background-color: rgba(#fff, .5);
+      opacity: 1;
+      padding-top: 0.6em;
+      text-align: center;
+      // visibility: hidden;
+      z-index: 99999999999;
+
+      @include media($large-screen) {
+        padding-top: 1em;
+      }
+
+      .modal-bg {
+        @include position(absolute, 0);
+        cursor: pointer;
+      }
+    }
+
+    .modal-close {
+      @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+      @include size(1.5em);
+      background: $modal-background;
+      cursor: pointer;
+
+      &:after,
+      &:before {
+        @include position(absolute, 3px 3px 0 50%);
+        @include transform(rotate(45deg));
+        @include size(0.15em 1.5em);
+        background: $modal-close-color;
+        content: '';
+        display: block;
+        margin: -3px 0 0 -1px;
+      }
+
+      &:hover:after,
+      &:hover:before {
+        background: darken($modal-close-color, 10%);
+      }
+
+      &:before {
+        @include transform(rotate(-45deg));
+      }
+    }
+
+    .modal-inner {
+      @include transition(opacity 0.25s ease);
+      background: $modal-background;
+      border-radius: $base-border-radius;
+      margin-top: 0;
+      margin: auto;
+      // max-height: 95%;
+      overflow: auto;
+      padding: $modal-padding / 2;
+      position: relative;
+      width: 95%;
+
+      @include media($medium-screen) {
+        max-height: 70%;
+        padding: $modal-padding;
+        width: 60%;
+      }
+
+      @include media($large-screen) {
+        width: 100%;
+      }
+
+      h1 {
+        color: $base-font-color;
+        margin-bottom: 0 0 0.6em 0;
+        text-align: left;
+        text-transform: capitalize;
+      }
+
+      p {
+        color: $base-font-color;
+        line-height: $base-line-height;
+      }
+
+      .modal-intro {
+        margin-bottom: 1em;
+      }
+
+      .modal-content {
+        color: $base-font-color;
+
+        @include media($medium-screen) {
+          @include columns(2 8em);
+        }
+      }
+
+      a.cta {
+        color: $base-background-color;
+        display: inline-block;
+        margin-right: 0.5em;
+        margin-top: 1em;
+
+        &:last-child {
+          padding: 0 2em;
+        }
+      }
+     }
+
+    .modal-state:checked + .modal-fade-screen {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-state:checked + .modal-fade-screen .modal-inner {
+      top: 0.5em;
+    }
+  }
+
+  .modal-open {
+    overflow: hidden;
+  }
+
+  form {
+    text-align: center;
+}
+
+
+
+  //Footer//
+  .footer {
+    background-color: gray;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .footer p {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+  }

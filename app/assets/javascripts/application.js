@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require materialize-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
 
 // $(function() {
 //   $('#tutor_modal').click(function(event) {
@@ -36,8 +38,53 @@ $(function() {
     if(this.value == default_value) {
       this.value = '';
     }
+
+
+
+
+
+$(document).on("ready page:load", function(){
+
+
+
+
+
+
+
+    $("#modal-1, #modal-2").on("change", function() {
+      if ($(this).is(":checked")) {
+        $("body").addClass("modal-open");
+      } else {
+        $("body").removeClass("modal-open");
+      }
+    });
+
+    $(".js-modal-1-close").on("click", function() {
+      $("#login-modal").toggle();
+    });
+
+    $(".js-modal-2-close").on("click", function() {
+      $("#registration-modal").toggle();
+    });
+
+    $(".modal-inner").on("click", function(e) {
+      e.stopPropagation();
+    });
+
   });
 
 
 
-});
+
+
+  $("#login-button").click(function(event){
+    event.preventDefault();
+    // $(".modal").hide();
+    $("#login-modal").toggle();
+  });
+
+  $("#registration-button").click(function(event){
+    event.preventDefault();
+    // $(".modal").hide();
+    $("#registration-modal").toggle();
+  });
