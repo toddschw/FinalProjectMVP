@@ -1,17 +1,15 @@
 
 <%= flash[:tutor_created] %>
 
-<h1>Welcome to TutorED (v1.0)!</h1>
-<h3>All subjects: </h3>
-<% @subjects.each do |subject| %>
-  <a href="/welcome/results?q=<%= subject.expertise %>"><%= subject.expertise %></a>&nbsp;
+<h1 id="baz">Welcome to TutorED (v1.0)!</h1>
+
+<h3 id="bar">What subject do you want to learn?</h3>
+<%= form_tag("/welcome/results", method: "get") do %>
+  <%= text_field_tag :q, "Search" %>
+  <%= submit_tag("Search") %>
 <% end %>
 
-
-
-<h3>What subject do you want to learn?</h3>
-<%= form_tag("/welcome/results", method: "get") do %>
-  <%= text_field_tag :q, "search" %>
-
-  <%= submit_tag("Search") %>
+<h3>Some subjects to consider: </h3>
+<% @subjects.each do |subject| %>
+  <a href="/welcome/results?q=<%= subject.expertise %>"><%= subject.expertise %></a>&nbsp;
 <% end %>

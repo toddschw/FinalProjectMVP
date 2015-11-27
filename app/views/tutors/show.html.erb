@@ -64,20 +64,20 @@
       </div>
     <% end %>
 
+
     <div class="field">
-      <%= f.label :review %><br>
-      <%= f.text_field :review %>
+      <%= f.label "your name" %><br>
+      <%= f.text_field :name_of_reviewer %>
+    </div>
+      <div class="field">
+      <%= f.label "Your comments:" %><br>
+      <%= f.text_field :review, size: 50 %>
     </div>
     <div class="field">
       <%= f.label "Number of Pencils (max 5)" %><br>
       <%= f.number_field :pencils %>
     </div>
     <div class="field">
-      <%= f.label "your name" %><br>
-      <%= f.text_field :name_of_reviewer %>
-    </div>
-    <div class="field">
-
       <%= f.hidden_field :tutor_id, value: @tutor.id %>
     </div>
     <div class="actions">

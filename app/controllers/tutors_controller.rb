@@ -11,7 +11,7 @@ class TutorsController < ApplicationController
   # GET /tutors/1.json
   def show
     @subjects = @tutor.subjects
-    @ratings = @tutor.ratings
+    @ratings = @tutor.ratings.order(created_at: :desc)
     @rating = Rating.new
   end
 

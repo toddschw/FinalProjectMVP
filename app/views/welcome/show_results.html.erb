@@ -1,4 +1,9 @@
 
+<%# test for any subjects found in database %>
+<% if @subjects.empty? %>
+<%= "no tutors found because we can't find this subject in our database" %>
+<% end %>
+
 
 <% if @subjects == false %>
   You didn't put anything in the search box.
@@ -6,6 +11,7 @@
   <%# a valid search was entered. Either show results or nothing found msg %>
   <%# test for no results first %>
     <% @subjects.each do |subject| %>
+
       <% if subject.tutors.empty? %>
        <%= "no tutors found" %>
 

@@ -26,3 +26,18 @@
 //       e.preventDefault();
 //     });
 // });
+
+
+
+$(function() {
+
+  $( "#q" ).focus(function() {
+    var default_value = this.value;
+    if(this.value == default_value) {
+      this.value = '';
+    }
+  });
+
+
+
+});
