@@ -4,13 +4,6 @@
 
 
 
- // /* Search Background*/
-// .search-background {
-//    background-image: url("https://images.unsplash.com/photo-1447968954315-3f0c44f7313c?dpr=2&fit=crop&fm=jpg&h=850&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1450");
-//    padding-bottom: 5%;
-//    opacity: 0.8;
-//   }
-
 
        /*Search Button*/
 
@@ -88,6 +81,10 @@
         text-align: center;
       }
 
+      img#crest {
+        margin-bottom: -3%;
+        }
+
       // About //
       .about {
         font-family: 'Lato', sans-serif;
@@ -96,7 +93,44 @@
         background-color: zz;
         padding-bottom: 2px;
         padding-top: 1px;
+        // background-color: #990012;
+
       }
+
+
+// Second Search //
+      $parallax-window-height: 30em;
+$parallax-background-height: $parallax-window-height * 2;
+
+.parallax-window {
+  max-height: $parallax-window-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-static-content {
+  color: #9A9A8A;
+  padding: 8em 0;
+  position: relative;
+  z-index: 9;
+}
+
+.parallax-background {
+  background: url("https://images.unsplash.com/photo-1447968954315-3f0c44f7313c?dpr=2&fit=crop&fm=jpg&h=850&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1450") repeat;
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-window-height / 3;
+  width: 100%;
+}
+
+// Based on http://codepen.io/skeurentjes/
+
 
       .about p {
         font-size: 25px;
@@ -110,29 +144,142 @@
       }
 
 
-      // Services//
+      // Testimonials//
       .services {
         background-color: #990012;
         font-family: 'Lato', sans-serif;
       }
+      //
+      // .flex-container{
+      //     height: auto;
+      //     display: flex;
+      //     flex-flow: row nowrap;
+      //     padding-bottom: 0%;
+      //     justify-content: space-around;
+      //     list-style: none;
+      //     text-align: center;
+      //
+      //   }
+      //
+      //
+      // .list-services{
+      //   margin: 0;
+      //   padding-top: 0;
+      // }
+      //
+      // img.payment, img.tutor-search {
+      //   height: 11rem;
+      // }
 
-      .flex-container{
-          height: auto;
-          display: flex;
-          flex-flow: row nowrap;
-          padding-bottom: 0%;
-          justify-content: space-around;
-          list-style: none;
-          text-align: center;
+          .cards {
+      @include display(flex);
+      @include flex-wrap(wrap);
+      @include justify-content(space-between);
+    }
 
+    .card {
+      $base-border-color: gainsboro !default;
+      $base-border-radius: 3px !default;
+      $base-background-color: white !default;
+      $base-spacing: 1.5em !default;
+      $action-color: #477DCA !default;
+      $dark-gray: #333 !default;
+      $base-font-color: $dark-gray !default;
+      $card-border-color: $base-border-color;
+      $card-border: 1px solid $card-border-color;
+      $card-background: lighten($card-border-color, 10%);
+      $card-header-background: $card-background;
+      $card-margin: 1em;
+      $card-image-hover-opacity: 0.7;
+      $card-image-hover-color: #F8F2B4;
+
+      @include flex-basis(15em);
+      @include flex-grow(1);
+      @include transition (all 0.2s ease-in-out);
+      background-color: $card-background;
+      border-radius: $base-border-radius;
+      border: $card-border;
+      box-shadow: 0 2px 4px darken($base-background-color, 10%);
+      cursor: pointer;
+      margin: 0 $card-margin $base-spacing $card-margin;
+      position: relative;
+
+
+      .card-image {
+        overflow: hidden;
+        height: 150px;
+        max-height: 150px;
+        background-color: $card-image-hover-color;
+
+        img {
+          @include transition (all 0.2s ease-in-out);
+          border-top-left-radius: $base-border-radius;
+          border-top-right-radius: $base-border-radius;
+          width: 100%;
+          opacity: 1;
         }
-
-
-      .list-services{
-        margin: 0;
-        padding-top: 0;
       }
 
-      img.payment, img.tutor-search {
-        height: 11rem;
+      .card-header {
+        @include transition (all 0.2s ease-in-out);
+        background-color: $card-header-background;
+        border-bottom: $card-border;
+        border-radius: $base-border-radius $base-border-radius 0 0;
+        font-weight: bold;
+        line-height: 1.5em;
+        padding: ($base-spacing / 3) ($base-spacing / 2);
       }
+
+      .card-copy {
+        font-size: 0.9em;
+        line-height: 1.5em;
+        padding: ($base-spacing / 2) ($base-spacing / 2);
+
+        p {
+          margin: 0 0 ($base-spacing / 2);
+        }
+      }
+
+      &:focus,
+      &:hover {
+        cursor: pointer;
+
+        img {
+          opacity: $card-image-hover-opacity;
+        }
+      }
+
+      &:active {
+        background-color: $card-background;
+
+        .card-header {
+          background-color: $card-background;
+        }
+      }
+    }
+
+// ------------------- //
+    .flex-container{
+      height: auto;
+      display: flex;
+      flex-flow: column;
+      padding-bottom: 0%;
+      justify-content: space-between;
+    }
+
+
+
+
+// Media Queries //
+
+@media screen and (min-width: 486px) {
+
+  img#crest{
+    width: 95vh;
+    text-align: cetner;
+  }
+  // 
+  // header {
+  //   width: 95vh;
+  // }
+}

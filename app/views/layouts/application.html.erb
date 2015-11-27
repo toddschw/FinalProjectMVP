@@ -8,15 +8,16 @@
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css"> -->
 </head>
 <body>
   <%= render "nav" %>
 
-  <!-- <header>
+<div class="flex-container">
+  <header>
     <img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd6_zpssgq3lx4w.jpg" border="0" alt=" photo tutrd6_zpssgq3lx4w.jpg"/></a>
-  </header> -->
-
+  </header>
+</div>
 
 <div class="menu">
   <!--Login-->
@@ -43,11 +44,7 @@
   <%= render partial: "tutors/tutor_registration", locals: {tutor: @tutor } %>
 </div>
 
-  <!-- <header>
-    <img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd6_zpssgq3lx4w.jpg" border="0" alt=" photo tutrd6_zpssgq3lx4w.jpg"/></a>
-  </header> -->
 
-<hr>
 
 <%= yield %>
 <!--Footer-->

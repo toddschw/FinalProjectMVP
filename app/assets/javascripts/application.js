@@ -16,13 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
-
-// $(function() {
-//   $('#tutor_modal').click(function(event) {
-//     event.preventDefault();
-//     alert("you clicked a tutor!");
-//   });
-// });
+  
 
 
 
@@ -31,8 +25,8 @@ $(document).on("ready page:load", function(){
 
 
 
-  $(function() {
-    $('.parallax').parallax();
+      $(function() {
+        $('.parallax').parallax();
 
 
 
@@ -44,9 +38,6 @@ $(document).on("ready page:load", function(){
       }
     });
 
-    // $(".modal-fade-screen, .modal-close").on("click", function() {
-    //   $(".modal-state:checked").prop("checked", false).change();
-    // });
     $(".js-modal-1-close").on("click", function() {
       $("#login-modal").toggle();
     });
@@ -62,35 +53,7 @@ $(document).on("ready page:load", function(){
 
 
 
-  // Initialize parallax
 
-//
-//   // Modals
-//   $("#modal-1, #modal-2").on("change", function() {
-//     if ($(this).is(":checked")) {
-//       $("body").addClass("modal-open");
-//     } else {
-//       $("body").removeClass("modal-open");
-//     }
-//   });
-//
-// //   $(".modal-fade-screen, .modal-close").on("click", function() {
-// //     $(".modal-state:checked").prop("checked", false).change();
-// //   });
-// //
-// //   $(".modal-inner").on("click", function(e) {
-// //     e.stopPropagation();
-// //   });
-// // });
-//
-//   $(".modal-fade-screen, .modal-close").on("click", function() {
-//     $(".modal-state:checked").prop("checked", false).change();
-//   });
-//
-//   $(".modal-inner").on("click", function(e) {
-//     e.stopPropagation();
-//   });
-//
   $("#login-button").click(function(event){
     event.preventDefault();
     // $(".modal").hide();
