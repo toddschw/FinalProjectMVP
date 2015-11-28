@@ -1,4 +1,6 @@
 require 'open-uri'
+require 'carrierwave/orm/activerecord'
+
 
 class Tutor < ActiveRecord::Base
   validates :password, length: { minimum: 8 }
@@ -10,7 +12,7 @@ class Tutor < ActiveRecord::Base
   has_many :messages
 
   has_secure_password
-
+  mount_uploader :avatar, AvatarUploader
   # This is necessary for Facebook Oauth
   def self.profile(token)
     url = 'https://graph.facebook.com/me'
