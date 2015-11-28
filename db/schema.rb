@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122153500) do
+ActiveRecord::Schema.define(version: 20151128174116) do
 
   create_table "messages", force: :cascade do |t|
     t.string   "from"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20151122153500) do
     t.datetime "updated_at",      null: false
     t.string   "username"
     t.string   "password_digest"
+    t.string   "avatar"
   end
 
   add_index "tutors", ["username"], name: "index_tutors_on_username", unique: true
