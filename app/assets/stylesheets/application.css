@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bourbon';
+@import 'neat';
+@import 'normalize';
+@import 'materialize';
+@import 'welcome';
+
+
+ header {
+    text-align: center;
+    background-color: #990012;
+}
