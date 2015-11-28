@@ -48,3 +48,13 @@ $(function() {
   });
 
 });
+
+$(function() {
+
+  $("#sendrequest").click(function(){
+      $.get("subjects", function(data, status){
+          alert("Data: " + data + "\nStatus: " + status);
+      });
+  });
+
+});
