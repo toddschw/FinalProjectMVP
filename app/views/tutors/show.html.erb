@@ -4,36 +4,56 @@
 
 <h1>Full Profile for <%= @tutor.name %> </h1>
 
-<table border="1">
-  <strong><th>Picture</th></strong>
-  <strong><th>Rate</th></strong>
-  <strong><th>Location</th></strong>
-  <strong><th>Bio</th></strong>
 
-  <tr>
-    <td><%= image_tag @tutor.picurl, width: '100' %>
-      <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
-    <td><%= number_to_currency(@tutor.rate) %></td>
-    <td><%= @tutor.city %></td>
-    <td><%= @tutor.bio %></td>
-  </tr>
+
+
+
+
+
+
+
+<table class="table-minimal">
+  <thead>
+    <tr>
+      <strong><th>Picture</th></strong>
+      <strong><th>Rate</th></strong>
+      <strong><th>Location</th></strong>
+      <strong><th>Bio</th></strong>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= image_tag @tutor.picurl, width: '100' %>
+        <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
+      <td><%= number_to_currency(@tutor.rate) %></td>
+      <td><%= @tutor.city %></td>
+      <td><%= @tutor.bio %></td>
+    </tr>
+    </tr>
+  </tbody>
 </table>
 
-<p>
-  <strong>All Areas of Expertise:</strong><Br>
+
+<div class="expertise">
+  <strong><u>All Areas of Expertise:</u></strong><Br>
   <% @subjects.each do |subject| %>
     <%= subject.expertise %><br>
     <% end %>
-</p>
+</div>
 
-<p>
-  <strong>Reviews</strong>
+
+
+
+
+
+<div class="reviewer">
+  <strong><u>Reviews</u></strong>
 
     <% unless @ratings.empty? %>
 
     <table border="1">
       <strong><th>Reviewer</th></strong>
-      <strong><th>Says</th></strong>
+      <strong><th>Comment</th></strong>
       <strong><th>Number of Pencils</th></strong>
 
       <tr>
@@ -48,8 +68,9 @@
     <% else %><br>
     <%= "No ratings yet." %>
     <% end %>
-</p>
+</div>
 
+<div class ="reviews">
 <strong>Add a Review</strong> <Br>
   <%= form_for(@rating) do |f| %>
     <% if @rating.errors.any? %>
@@ -84,3 +105,4 @@
       <%= f.submit %>
     </div>
   <% end %>
+</div>
