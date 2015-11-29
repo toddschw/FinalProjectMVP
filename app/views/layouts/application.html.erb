@@ -10,11 +10,6 @@
 <body>
 
 <%= link_to "Home", welcome_path %>
-<% if current_tutor %>
-  | Logged in as tutor <%= current_tutor.name %>
-  <%= image_tag current_tutor.picurl, width:30 %>
-
-<% end %>
 <span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span>
 
 <span style="float:right;">
