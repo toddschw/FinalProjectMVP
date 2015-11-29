@@ -46,6 +46,8 @@ class TutorsController < ApplicationController
 
     @subjects = Subject.all
 
+    @subject = Subject.new
+
     params[:tutor][:subject_ids].each do |sid|
       if sid.present?
         @tutor.subjects << Subject.find(sid)

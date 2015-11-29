@@ -31,7 +31,8 @@ end %>
   <%= f.select :subject_ids, @subjects.map { |s| [s.expertise, s.id] }, {}, multiple: true %>
 </div>
 
-<p><%= link_to "Add a subject", new_subject_path %></p>
+<p><%#= render :partial => 'subjects/form' %></p>
+
 
 <div class="field">
   <%= f.label "Create a username" %>

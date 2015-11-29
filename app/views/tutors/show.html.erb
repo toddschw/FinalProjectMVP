@@ -27,14 +27,14 @@
 </p>
 
 <p>
-  <strong>Reviews</strong>
+  <strong id="ratings_headline">Reviews:</strong>
 
     <% unless @ratings.empty? %>
 
-    <table border="1">
-      <strong><th>Reviewer</th></strong>
-      <strong><th>Says</th></strong>
-      <strong><th>Number of Pencils</th></strong>
+    <table id="ratings_table" border="0">
+      <strong><th>Student</th></strong>
+      <strong><th>Review</th></strong>
+      <strong><th># of Pencil</th></strong>
 
       <tr>
         <% @ratings.each do |rating| %>
@@ -51,7 +51,7 @@
 </p>
 
 <strong>Add a Review</strong> <Br>
-  <%= form_for(@rating) do |f| %>
+  <%= form_for(@rating, remote: true) do |f| %>
     <% if @rating.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
