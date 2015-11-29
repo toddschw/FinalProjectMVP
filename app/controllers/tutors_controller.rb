@@ -75,9 +75,11 @@ class TutorsController < ApplicationController
   # PATCH/PUT /tutors/1
   # PATCH/PUT /tutors/1.json
   def update
+    @subjects = Subject.all
+
     respond_to do |format|
       if @tutor.update(tutor_params)
-        format.html { redirect_to @tutor, notice: 'Tutor was successfully updated.' }
+        format.html { redirect_to welcome_dashboard_path }
         format.json { render :show, status: :ok, location: @tutor }
       else
         format.html { render :edit }

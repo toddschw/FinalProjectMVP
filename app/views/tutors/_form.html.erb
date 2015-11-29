@@ -29,31 +29,32 @@ end %>
   <%# [ ["math", 1], ["english", 2]] %>
   <%# if new tutor %>
   <%= f.select :subject_ids, @subjects.map { |s| [s.expertise, s.id] }, {}, multiple: true %>
+
 </div>
 
-<p><%#= render :partial => 'subjects/form' %></p>
-<p><%= link_to 'Add a subject', new_subject_path %></p>
+<%#= link_to 'Add a subject', new_subject_path %>
+
 
     <div class="field">
-      <%= f.label "Create a username" %>
+      <%= f.label "Username" %>
       <%= f.text_field :username %>
     </div>
 
 
 
   <div class="field">
-    <%= f.label "Choose a Password" %>
+    <%= f.label "Password" %>
     <%= f.password_field :password %>
   </div>
 
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name, :value => "#{fb_name}" %>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email, :value => "#{fb_email}" %>
+    <%= f.text_field :email %>
   </div>
   <div class="field">
     <%= f.label :city %>
