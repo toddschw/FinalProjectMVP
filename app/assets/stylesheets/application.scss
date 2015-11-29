@@ -15,7 +15,6 @@
 
 
 
-
   /*Modal*/
 
   .modal {
@@ -63,7 +62,6 @@
     opacity: 1;
     padding-top: 0.6em;
     text-align: center;
-    // visibility: hidden;
     z-index: 99999999999;
 
     @include media($large-screen) {
@@ -264,6 +262,10 @@ form {
 
 
 
+// Testimonials
+.services {
+    background-color: #990012;
+}
 
 
 
