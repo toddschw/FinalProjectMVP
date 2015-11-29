@@ -10,24 +10,33 @@
 </head>
 <body>
 
-<%= link_to "Home", welcome_path %>
-<% if current_tutor %>
-  | Logged in as tutor <%= current_tutor.name %>
-  <%= image_tag current_tutor.picurl, width:30 %>
-
-<% end %>
 <span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span>
 
-<span style="float:right;">
-  <%= link_to "Tutor Register", new_tutor_path %> |
-  <%= link_to "Tutor Log In", new_session_path %> |
-  <%= link_to "Logout", welcome_logout_path %></span>
-<hr>
 <div class="flex-container">
   <header>
     <img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd6_zpssgq3lx4w.jpg" border="0" alt=" photo tutrd6_zpssgq3lx4w.jpg"/></a>
   </header>
 </div>
+
+
+<div id="nav-wrap">
+    <ul class="navbar split">
+      <li><span><%= link_to "Home", welcome_path %>
+      <% if current_tutor %>
+        | Logged in as tutor <%= current_tutor.name %>
+        <%= image_tag current_tutor.picurl, width:30 %>
+
+      <% end %></span></li>
+      <li><span>  <%= link_to "Tutor Register", new_tutor_path %> </span></li>
+      <li><span>  <%= link_to "Tutor Log In", new_session_path %></li>
+        <li><span>  <%= link_to "Logout", welcome_logout_path %></li>
+
+      </ul>
+  </div>
+
+
+
+
 
 <%= yield %>
 
