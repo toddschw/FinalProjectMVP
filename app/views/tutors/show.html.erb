@@ -33,10 +33,13 @@
 
     <% unless @ratings.empty? %>
 
-    <table id="ratings_table" border="0">
-      <strong><th style="text-decoration:underline;">Student</th></strong>
-      <strong><th style="text-decoration:underline;">Review</th></strong>
-      <strong><th style="text-decoration:underline;"># of Pencil</th></strong>
+
+    <table id="ratings_table" class="pure-table pure-table-bordered">
+    <thead>
+      <strong><th>Student</th></strong>
+      <strong><th>Review</th></strong>
+      <strong><th># of Pencils</th></strong>
+    </thead>
 
       <tr>
         <% @ratings.each do |rating| %>
@@ -48,7 +51,7 @@
     </table>
 
     <% else %><br>
-    <%= "No ratings yet." %>
+    <span id="noratings"><%= "No ratings yet." %></span>
     <% end %>
 </p>
 

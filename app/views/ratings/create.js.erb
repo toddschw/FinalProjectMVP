@@ -6,14 +6,29 @@ $(function() {
     var what_review = "<%= @rating.review %>";
     var what_pencils = "<%= @rating.pencils %>";
 
+    var table_skeleton = '<table id="ratings_table" class="pure-table pure-table-bordered">'
+                          + '<thead>'
+                          + '<strong><th>Student</th></strong>'
+                          + '<strong><th>Review</th></strong>'
+                          + '<strong><th># of Pencils</th></strong>'
+                          + '</thead>';
 
 
+    if (!$('#ratings_table').length) {  // test for no ratings start condition
+      // remove the text 'no ratings found'
+      $('#noratings').empty();
 
-    if (!$('#ratings_table').length) {
-      $('#ratings_headline').after("<table id='ratings_table' border='0'><strong><th>Reviewer</th></strong><strong><th>Says</th></strong><strong><th># of Pencils</th></strong>")
+      // build the table structure and the header row
+      $('#ratings_headline').after(table_skeleton);
+
+      // add the row
+      $('#ratings_table').append("<tr><td>" + what_reviewer + "</td><td>" + what_review + "</td><td>" + what_pencils + "</td><td style='color:red;'>NEW!</td></tr>");
+    }
+    else {  // at least one rating is there as a start condition
+      $('#ratings_table').prepend("<tr style='color:green;font-style:italic'><td>" + what_reviewer + "</td><td>" + what_review + "</td><td>" + what_pencils + "</td></tr>");
+
     }
 
-$('#ratings_table tr:first').after("<tr><td>" + what_reviewer + "</td><td>" + what_review + "</td><td>" + what_pencils + "</td><td style='color:red;'>NEW!</td></tr>");
 
 $('#rating_name_of_reviewer').val('');
 $('#rating_review').val('');

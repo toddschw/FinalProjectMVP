@@ -24,7 +24,7 @@ class WelcomeController < ApplicationController
 
   def dashboard
     @tutor = current_tutor
-    @messages = current_tutor.messages
+    @messages = current_tutor.messages.order(id: :desc)
     @subjects = @tutor.subjects
   end
 
