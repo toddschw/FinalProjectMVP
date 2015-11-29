@@ -5,6 +5,17 @@
 
 /*Search Button*/
 
+button[type=submit] {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    outline: none;
+    padding: 5px 10px;
+  }
+
+    img.search {
+      height: 12px;
+      opacity: 0.7;
+    }
 
 
 input[type="submit"] {
@@ -18,7 +29,7 @@ input[type="submit"] {
   color: #ccc;
   background-color: #555;
   background: webkit-linear-gradient(#888, #555);
-  background: linear-gradient(#888, #555);
+  background: linear-gradient(#000, #000);
   border: 0 none;
   border-radius: 3px;
   text-shadow: 0 -1px 0 #000;
@@ -28,15 +39,11 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-  margin: auto;
   font-family: 'Lato', san-serif;
-  margin-left: 64%;
-  margin-top: 20px;
 }
 
-
-input[type="submit"]:hover {
-  color: white;
+input[type="submit"] {
+    margin: auto;
 }
 
 
@@ -47,15 +54,22 @@ input[type="submit"]:hover {
 
 // Search Input Box //
 input#q {
-  width: 400px;
-  height: 57px;
-  border-radius: 2%;
-  position: relative;
-  top: 71px;
-  left: -20px;
-  font-size: 24px;
-  text-align: center;
-  color: white
+    @include appearance(none);
+    @include box-sizing(border-box);
+    @include transition(border-color);
+    background-color: white;
+    // border-radius: $base-border-radius;
+    // border-radius: $base-border-radius;
+    // border: 1px solid $base-border-color;
+    display: block;
+    font-size: 1em;
+    font-style: italic;
+    margin: auto;
+    // padding: ($base-spacing / 3) ($base-spacing / 3);
+    position: relative;
+    width: 50%;
+    text-align: center;
+
 }
 
 // Search Background //
@@ -232,6 +246,20 @@ img#crest {
     }
   }
 }
+
+
+// Footer //
+.footer {
+    background: gray;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.footer p {
+  text-align: center;
+}
+
+
 
 
    @media screen and (min-width: 400px) {
