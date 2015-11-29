@@ -11,7 +11,7 @@ else
   fb_name = ""
 end %>
 
-<%= form_for(@tutor) do |f| %>
+<%= form_for(@tutor, :html=>{:class => 'pure-form'}) do |f| %>
   <% if @tutor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tutor.errors.count, "error") %> prohibited this tutor from being saved:</h2>
@@ -33,15 +33,17 @@ end %>
 
 <p><%#= render :partial => 'subjects/form' %></p>
 
+    <div class="field">
+      <%= f.label "Create a username" %>
+      <%= f.text_field :username %>
+    </div>
 
-<div class="field">
-  <%= f.label "Create a username" %>
-  <%= f.text_field :username %>
-</div>
-<div class="field">
-  <%= f.label "Choose a Password" %>
-  <%= f.password_field :password %>
-</div>
+
+
+  <div class="field">
+    <%= f.label "Choose a Password" %>
+    <%= f.password_field :password %>
+  </div>
 
 
   <div class="field">
@@ -70,7 +72,7 @@ end %>
   </div>
   <div class="actions">
     <%= f.submit %>
-
-
   </div>
+
+</table>
 <% end %>

@@ -4,11 +4,13 @@
 
 <h1>Full Profile for <%= @tutor.name %> </h1>
 
-<table border="1">
+<table class="pure-table">
+  <thead>
   <strong><th>Picture</th></strong>
   <strong><th>Rate</th></strong>
   <strong><th>Location</th></strong>
   <strong><th>Bio</th></strong>
+</thead>
 
   <tr>
     <td><%= image_tag @tutor.picurl, width: '100' %>
@@ -32,9 +34,9 @@
     <% unless @ratings.empty? %>
 
     <table id="ratings_table" border="0">
-      <strong><th>Student</th></strong>
-      <strong><th>Review</th></strong>
-      <strong><th># of Pencil</th></strong>
+      <strong><th style="text-decoration:underline;">Student</th></strong>
+      <strong><th style="text-decoration:underline;">Review</th></strong>
+      <strong><th style="text-decoration:underline;"># of Pencil</th></strong>
 
       <tr>
         <% @ratings.each do |rating| %>
@@ -51,7 +53,7 @@
 </p>
 
 <strong>Add a Review</strong> <Br>
-  <%= form_for(@rating, remote: true) do |f| %>
+  <%= form_for(@rating, remote: true, :html=>{:class => 'pure-form'}) do |f| %>
     <% if @rating.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
@@ -63,7 +65,6 @@
         </ul>
       </div>
     <% end %>
-
 
     <div class="field">
       <%= f.label "your name" %><br>

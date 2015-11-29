@@ -28,19 +28,9 @@
 // });
 
 
-//
-// $(function() {
-//   $( "#q" ).focus(function() {
-//     var default_value = this.value;
-//     if(this.value == default_value) {
-//       this.value = '';
-//     }
-//   });
-//
-// });
 
 $(function() {
-  $( "#q" ).blur(function() {
+  $( "#q" ).focus(function() {
     var default_value = this.value;
     if(this.value == default_value) {
       this.value = '';
@@ -48,6 +38,8 @@ $(function() {
   });
 
 });
+
+
 
 $(function() {
 
