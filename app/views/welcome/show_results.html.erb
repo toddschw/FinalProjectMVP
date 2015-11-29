@@ -1,19 +1,16 @@
 
 <%# test for any subjects found in database %>
 <% if @subjects.empty? %>
-<%= "no tutors found because we can't find this subject in our database" %>
+<%= "No tutors found (subject also not found)." %>
 <% end %>
 
 
-<% if @subjects == false %>
-  You didn't put anything in the search box.
-<% else %>
   <%# a valid search was entered. Either show results or nothing found msg %>
   <%# test for no results first %>
     <% @subjects.each do |subject| %>
 
       <% if subject.tutors.empty? %>
-       <%= "no tutors found" %>
+       <%= "No tutors found at the moment.  Normally, we do teach this subject. " %>
 
        <% else %>
 
@@ -47,7 +44,7 @@
     <%# Closes Results were found loop  %>
 
   <% end %> <%# Closes no results found  %>
-<% end %> <%# Closes search term not entered   %>
+
 
 <%# set a session variable for search term %>
 <%# useful for returning student to this page %>

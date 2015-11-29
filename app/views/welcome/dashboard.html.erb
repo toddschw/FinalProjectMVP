@@ -1,6 +1,6 @@
 <h1>Welcome back, <%= current_tutor.name %></h1>
 
-<h2>Expertise:</h2>
+<h2>Expertise: </h2>
 <% his_subjects = "" %>
 <% current_tutor.subjects.each do |subject| %>
   <% his_subjects << subject.expertise << ", " %>
@@ -12,10 +12,12 @@
 
 
 <h2>Messages:</h2>
-<table border="1">
+<table class="pure-table pure-table-bordered">
+  <thead>
   <strong><th>Student</th></strong>
   <strong><th>Student's Email</th></strong>
   <strong><th>Message Body</th></strong>
+</thead>
 <% @messages.each do |message|  %>
   <tr>
     <td><%= message.from %></td>
