@@ -27,9 +27,11 @@
         <%= image_tag current_tutor.picurl, width:30 %>
 
       <% end %></span></li>
+          <li><span>  <%= link_to "Logout", welcome_logout_path %></li>
+                  <li><span>  <%= link_to "Tutor Log In", new_session_path %></li>
       <li><span>  <%= link_to "Tutor Register", new_tutor_path %> </span></li>
-      <li><span>  <%= link_to "Tutor Log In", new_session_path %></li>
-        <li><span>  <%= link_to "Logout", welcome_logout_path %></li>
+
+
 
       </ul>
   </div>
