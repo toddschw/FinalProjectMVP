@@ -17,28 +17,35 @@
 
     <p> <span class="content-head"><%= subject.expertise %> Tutors</span><br><br>
       <% subject.tutors.each do |tutor| %>
-        <span class="content-subhead"></i><%= tutor.name %></span><br>
-      <strong>Location:</strong> <%= tutor.city %><br>
-      <strong>Rating:</strong>
-       <% num_reviewers = 0 %>
-       <% total_stars = 0 %>
-       <% tutor.ratings.each do |rating| %>
-       <% total_stars += rating.pencils %>
-       <% num_reviewers += 1 %>
-       <% end %>
-           <% if num_reviewers > 0 %>
-            <% avg_rating = (total_stars.to_d / num_reviewers.to_d).to_d %>
-            <% avg_rating = number_with_precision(avg_rating, precision: 2) %>
-            <% avg_rating = avg_rating.to_s + " stars (out of 5)" %>
-           <% else %>
-            <% avg_rating = "No ratings yet" %>
+          <table border="0">
+            <tr>
+              <td style="padding-left:25px;"><%= image_tag tutor.picurl, width:150 %></td>
+        <td style="padding-left:25px;">
+          <span class="content-subhead"></i><%= tutor.name %></span><br>
+          <strong>Location:</strong> <%= tutor.city %><br>
+          <strong>Rating:</strong>
+           <% num_reviewers = 0 %>
+           <% total_stars = 0 %>
+           <% tutor.ratings.each do |rating| %>
+           <% total_stars += rating.pencils %>
+           <% num_reviewers += 1 %>
            <% end %>
-       <%= avg_rating %><br>
+               <% if num_reviewers > 0 %>
+                <% avg_rating = (total_stars.to_d / num_reviewers.to_d).to_d %>
+                <% avg_rating = number_with_precision(avg_rating, precision: 2) %>
+                <% avg_rating = avg_rating.to_s + " stars (out of 5)" %>
+               <% else %>
+                <% avg_rating = "No ratings yet" %>
+               <% end %>
+           <%= avg_rating %><br>
 
        <%# define the link for individual tutor %>
        <% tutor_href= "/tutors/"  + tutor.id.to_s %>
        <%# use link_to %>
        <%= link_to "See Full Profile", tutor_href, id: 'tutor_modal' %><br><br>
+     </td>
+  </tr>
+</table>
        <% end %>
       <% end %>
     <%# Closes Results were found loop  %>
