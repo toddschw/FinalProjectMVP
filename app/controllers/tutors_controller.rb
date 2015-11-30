@@ -114,6 +114,6 @@ class TutorsController < ApplicationController
       params.require(:tutor).permit(
       :name, :city, :bio, :picurl,
       :rate, :email, :username,
-      :password, :subject_ids)
+      :password, :subject_ids, :subject)
     end
 end
