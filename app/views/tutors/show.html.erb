@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <td style="padding:0 25px 0 25px;">
 
-<a href="/welcome/results?q=<%= session[:q] %>">Go back to results</a>
+<a style="color:#8c8c8c;" href="/welcome/results?q=<%= session[:q] %>">Go back to results</a>
+
+<img src="/assets/back.png">
+
 
 <h1>Full Profile for <%= @tutor.name %> </h1>
 
 <table class="pure-table">
   <thead>
   <strong><th>Picture</th></strong>
-  <strong><th>Rate</th></strong>
+  <strong><th>Rate/Hr</th></strong>
   <strong><th>Location</th></strong>
   <strong><th>Bio</th></strong>
 </thead>
@@ -88,3 +94,6 @@
       <%= f.submit %>
     </div>
   <% end %>
+</td>
+</tr>
+</table>
