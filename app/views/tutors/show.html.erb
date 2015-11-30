@@ -1,3 +1,5 @@
+
+
 <p id="notice"><%= notice %></p>
 <table>
   <tr>
@@ -62,6 +64,7 @@
 </p>
 
 <strong>Add a Review</strong> <Br>
+  <table border="4">
   <%= form_for(@rating, remote: true, :html=>{:class => 'pure-form'}) do |f| %>
     <% if @rating.errors.any? %>
       <div id="error_explanation">
@@ -94,6 +97,8 @@
       <%= f.submit "Submit Your Review" %>
     </div>
   <% end %>
+  </table>
+
 </td>
 </tr>
 </table>

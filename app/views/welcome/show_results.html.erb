@@ -15,9 +15,9 @@
        <% else %>
 
 
-    <p><u><%= subject.expertise %> Tutors</u><br>
+    <p> <span class="content-head"><%= subject.expertise %> Tutors</span><br><br>
       <% subject.tutors.each do |tutor| %>
-      <strong>Tutor Name:</strong> <%= tutor.name %><br>
+        <span class="content-subhead"></i><%= tutor.name %></span><br>
       <strong>Location:</strong> <%= tutor.city %><br>
       <strong>Rating:</strong>
        <% num_reviewers = 0 %>

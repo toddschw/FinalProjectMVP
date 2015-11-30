@@ -3,30 +3,42 @@
 <head>
   <title>Tutoredtest</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="header">
-<%= link_to "Home", welcome_path %>
-<span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span>
 
-<span style="float:right;">
-  <% if !current_tutor %>
-    <%= link_to "Register", new_tutor_path %> |
-    <%= link_to "Log In", new_session_path %> &nbsp;&nbsp;&nbsp;
-<% end %>
+  <div class="header">
+      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+          <a class="pure-menu-heading" href="/">Tutrd</a>
 
-<% if current_tutor %>
-  <%= link_to "Logout", welcome_logout_path %>&nbsp;&nbsp;&nbsp;</span>
-<% end %>
+          <% if !current_tutor %>
+          <ul class="pure-menu-list">
 
-</div>
+             <%= link_to "Register", {controller: "tutors", action: "new"}, class: "pure-menu-item" %>&nbsp;
+             <%= link_to "Log In", {controller: "sessions", action: "new"}, class: "pure-menu-item" %>&nbsp;
+          </ul>
+          <% end %>
 
+          <% if current_tutor %>
+          <ul class="pure-menu-list">
+            <%= link_to "Log Out", {controller: "welcome", action: "logout"}, class: "pure-menu-item" %>&nbsp;
+          </ul>
+          <% end %>
+      </div>
+  </div>
+<br>
 
 <%= yield %>
+
+<div class="footer l-box is-center">
+    View the source of this layout to learn more. Made with love by the YUI Team.
+</div>
 
 </body>
 </html>
