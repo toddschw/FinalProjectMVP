@@ -2,7 +2,7 @@
 <%= flash[:tutor_created] %>
 <%= flash[:search_empty] %>
 
-
+<div id="main_search">
 <h1 id="baz">Welcome to TutorED (v1.0)!</h1>
 
 <h3 id="bar">What subject do you want to learn?</h3>
@@ -15,3 +15,4 @@
 <% @subjects.each do |subject| %>
   <a href="/welcome/results?q=<%= subject.expertise %>"><%= subject.expertise %></a>&nbsp;
 <% end %>
+</div>

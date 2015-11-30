@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<div class="header">
 <%= link_to "Home", welcome_path %>
 <span style="color:red;"><% if flash[:not_logged_in] %> | <%= flash[:not_logged_in] %> <% end %></span>
 
@@ -16,7 +17,7 @@
   <%= link_to "Tutor Register", new_tutor_path %> |
   <%= link_to "Tutor Log In", new_session_path %> |
   <%= link_to "Logout", welcome_logout_path %></span>
-<hr>
+</div>
 
 
 <%= yield %>
