@@ -5,6 +5,7 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
     @subjects = Subject.all
+    @subject = Subject.new
   end
 
   # GET /subjects/1
@@ -29,6 +30,7 @@ class SubjectsController < ApplicationController
     respond_to do |format|
       if @subject.save
         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
+        format.js # render subjects/create.js.erb
         format.json { render :show, status: :created, location: @subject }
       else
         format.html { render :new }

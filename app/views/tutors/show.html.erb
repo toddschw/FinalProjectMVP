@@ -1,38 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<a href="/welcome/results?q=<%= session[:q] %>">Go back to results</a>
+<a href="/welcome/results?q=<%= session[:q] %>">Go back to results</a><br>
+<%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
 
 <h1>Full Profile for <%= @tutor.name %> </h1>
 
-
-
-
-
-
-
-
-
-<table class="table-minimal">
+<table class="pure-table">
   <thead>
-    <tr>
-      <strong><th>Picture</th></strong>
-      <strong><th>Rate</th></strong>
-      <strong><th>Location</th></strong>
-      <strong><th>Bio</th></strong>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= image_tag @tutor.picurl, width: '100' %>
+  <strong><th>Picture</th></strong>
+  <strong><th>Rate</th></strong>
+  <strong><th>Location</th></strong>
+  <strong><th>Bio</th></strong>
+</thead>
 
-      <td><%= number_to_currency(@tutor.rate) %></td>
-      <td><%= @tutor.city %></td>
-      <td><%= @tutor.bio %></td>
-    </tr>
-    </tr>
-  </tbody>
+  <tr>
+    <td><%= image_tag @tutor.picurl, width: '100' %>
+    <td><%= number_to_currency(@tutor.rate) %></td>
+    <td><%= @tutor.city %></td>
+    <td><%= @tutor.bio %></td>
+  </tr>
+
 </table>
-  <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
+  <!-- <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td> -->
 <br>
 <br>
 
@@ -77,12 +66,24 @@
 
   <strong><u>Reviews</u></strong>
 
+<<<<<<< HEAD
+=======
+<p>
+  <strong id="ratings_headline">Reviews:</strong>
+>>>>>>> f72013302c969b26b3bdeff88c20279d8a71bfab
 
 
+<<<<<<< HEAD
     <table border="1">
       <strong><th>Reviewer</th></strong>
       <strong><th>Comment</th></strong>
       <strong><th>Number of Pencils</th></strong>
+=======
+    <table id="ratings_table" border="0">
+      <strong><th style="text-decoration:underline;">Student</th></strong>
+      <strong><th style="text-decoration:underline;">Review</th></strong>
+      <strong><th style="text-decoration:underline;"># of Pencil</th></strong>
+>>>>>>> f72013302c969b26b3bdeff88c20279d8a71bfab
 
       <tr>
         <% @ratings.each do |rating| %>
@@ -100,7 +101,7 @@
 
 <div class ="reviews">
 <strong>Add a Review</strong> <Br>
-  <%= form_for(@rating) do |f| %>
+  <%= form_for(@rating, remote: true, :html=>{:class => 'pure-form'}) do |f| %>
     <% if @rating.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
@@ -112,7 +113,6 @@
         </ul>
       </div>
     <% end %>
-
 
     <div class="field">
       <%= f.label "your name" %><br>
