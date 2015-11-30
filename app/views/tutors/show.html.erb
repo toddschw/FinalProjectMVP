@@ -77,7 +77,7 @@
 
     <div class="field">
       <%= f.label "your name" %><br>
-      <%= f.text_field :name_of_reviewer %>
+      <%= f.text_field :name_of_reviewer, size: 50 %>
     </div>
       <div class="field">
       <%= f.label "Your comments:" %><br>
@@ -91,7 +91,7 @@
       <%= f.hidden_field :tutor_id, value: @tutor.id %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit "Submit Your Review" %>
     </div>
   <% end %>
 </td>
