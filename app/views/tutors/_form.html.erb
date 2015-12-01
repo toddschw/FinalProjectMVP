@@ -1,3 +1,6 @@
+
+
+
 <div class="reg">
 <% if @fb_info
   # This doesn't belong in the view
@@ -30,9 +33,11 @@ end %>
   <%# if new tutor %>
   <%= f.select :subject_ids, @subjects.map { |s| [s.expertise, s.id] }, {}, multiple: true %>
 
+  <%#= link_to 'Add a subject', new_subject_path %>
+
 </div>
 
-<%#= link_to 'Add a subject', new_subject_path %>
+
 
 
     <div class="field">
