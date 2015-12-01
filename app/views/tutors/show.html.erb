@@ -71,7 +71,7 @@
     <% if @rating.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
-
+        <% end %>
         <ul>
         <% @rating.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -80,23 +80,5 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label "your name" %><br>
-      <%= f.text_field :name_of_reviewer %>
-    </div>
-      <div class="field">
-      <%= f.label "Your comments:" %><br>
-      <%= f.text_field :review, size: 50 %>
-    </div>
-    <div class="field">
-      <%= f.label "Number of Pencils (max 5)" %><br>
-      <%= f.number_field :pencils %>
-    </div>
-    <div class="field">
-      <%= f.hidden_field :tutor_id, value: @tutor.id %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
-</div>
+    <%= render 'layouts/ratings/form' %>
+<% end %>

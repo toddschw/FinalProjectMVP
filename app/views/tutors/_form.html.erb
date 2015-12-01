@@ -33,7 +33,7 @@ end %>
   <%# if new tutor %>
   <%= f.select :subject_ids, @subjects.map { |s| [s.expertise, s.id] }, {}, multiple: true %>
 
-  <%#= link_to 'Add a subject', new_subject_path %>
+  <%= link_to 'Add a subject', new_subject_path %>
 
 </div>
 
