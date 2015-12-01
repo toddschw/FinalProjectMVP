@@ -9,7 +9,7 @@
     border: 2px solid #000;
     padding: 20px;
     // width: 290px;
-    height: 830px;
+    height: 850px;
     box-shadow: 10px 10px 5px #888888;
 }
 
@@ -25,7 +25,7 @@ h1 {
     border: 2px solid #000;
     padding: 20px;
     width: 290px;
-    height: 345px;
+    height: 400px;
     box-shadow: 10px 10px 5px #888888;
 }
 
@@ -39,4 +39,18 @@ select#tutor_subject_ids {
 
 textarea#tutor_bio {
     width: 100%;
+}
+
+table.pure-table {
+    margin: auto;
+}
+
+a {
+    padding: 1%;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+  color: gray;
 }

@@ -40,9 +40,7 @@
 
 <div class="reviewer">
 
-  <% unless @ratings.empty? %>
-
-  <table class="table-minimal">
+  <table class="pure-table pure-table-bordered">
     <thead>
       <tr>
         <strong><th>Reviewer</th></strong>
@@ -50,35 +48,23 @@
         <strong><th>Number of Pencils</th></strong>
       </tr>
     </thead>
+
     <tbody>
-      <tr>
         <% @ratings.each do |rating| %>
+        <tr>
             <td><%= rating.name_of_reviewer %></td>
             <td><%= rating.review %></td>
             <td><%= rating.pencils %></td>
       </tr>
-      </tr>
+      <% end %>
     </tbody>
   </table>
-
-  <% end %>
-
 </div>
 
-<div class ="reviews">
-<strong>Add a Review</strong> <Br>
-  <%= form_for(@rating, remote: true, :html=>{:class => 'pure-form'}) do |f| %>
-    <% if @rating.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
-        <% end %>
-        <ul>
-        <% @rating.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+<br>
+<br>
 
-    <%= render 'layouts/ratings/form' %>
-<% end %>
+
+<div class ="reviews">
+<%= render '/ratings/form' %>
+    </div>

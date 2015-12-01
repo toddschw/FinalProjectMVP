@@ -28,25 +28,25 @@
 // });
 
 
-// 
-// $(function() {
-//   $( "#q" ).focus(function() {
-//     var default_value = this.value;
-//     if(this.value == default_value) {
-//       this.value = '';
-//     }
-//   });
-//
-// });
-//
-//
-//
-// $(function() {
-//
-//   $("#sendrequest").click(function(){
-//       $.get("subjects", function(data, status){
-//           alert("Data: " + data + "\nStatus: " + status);
-//       });
-//   });
-//
-// });
+
+$(function() {
+  $( "#q" ).focus(function() {
+    var default_value = this.value;
+    if(this.value == default_value) {
+      this.value = '';
+    }
+  });
+
+});
+
+
+
+$(function() {
+
+  $("#sendrequest").click(function(){
+      $.get("subjects", function(data, status){
+          alert("Data: " + data + "\nStatus: " + status);
+      });
+  });
+
+});
