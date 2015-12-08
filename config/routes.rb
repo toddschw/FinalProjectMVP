@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'welcome/dashboard' => 'welcome#dashboard'
   get 'welcome/logout' => 'welcome#logout'
   get 'welcome/bye' => 'welcome#bye'
+  get 'welcome/count_tutors' => 'welcome#count_tutors'
 
   get 'facebook/token'
 

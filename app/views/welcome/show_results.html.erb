@@ -14,8 +14,8 @@
 
        <% else %>
 
-
-    <p> <span class="content-head"><%= subject.expertise %> Tutors</span><br><br>
+    <p><%= subject.expertise %> Tutors<br>
+      <div id="tutor_search_results">
       <% subject.tutors.each do |tutor| %>
           <table border="0">
             <tr>
@@ -44,11 +44,14 @@
        <%# use link_to %>
        <%= link_to "See Full Profile", tutor_href, id: 'tutor_modal' %><br><br>
      </td>
-  </tr>
-</table>
+   </tr>
+  </table>
+
        <% end %>
       <% end %>
     <%# Closes Results were found loop  %>
+</div>
+
 
   <% end %> <%# Closes no results found  %>
 

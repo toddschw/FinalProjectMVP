@@ -14,31 +14,24 @@
 
 
   <div class="header">
-      <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-          <a class="pure-menu-heading" href="/">Tutrd</a>
+
+          <a href="/">Tutrd</a>
 
           <% if !current_tutor %>
-          <ul class="pure-menu-list">
-
-             <%= link_to "Register", {controller: "tutors", action: "new"}, class: "pure-menu-item" %>&nbsp;
-             <%= link_to "Log In", {controller: "sessions", action: "new"}, class: "pure-menu-item" %>&nbsp;
-          </ul>
+             <%= link_to "Register", new_tutor_path %>&nbsp;
+             <%= link_to "Log In", new_session_path %>&nbsp;
           <% end %>
 
-          <% if current_tutor %>
-          <ul class="pure-menu-list">
-            <%= link_to "Log Out", {controller: "welcome", action: "logout"}, class: "pure-menu-item" %>&nbsp;
-          </ul>
-          <% end %>
-      </div>
-  </div>
-<br>
+          <%# if current_tutor %>
+
+            <%= link_to "Log Out", welcome_logout_path %>&nbsp;
+
+          <%# end %>
+</div>
 
 <%= yield %>
 
-<div class="footer l-box is-center">
-    View the source of this layout to learn more. Made with love by the YUI Team.
-</div>
+
 
 </body>
 </html>

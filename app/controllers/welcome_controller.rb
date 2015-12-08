@@ -39,6 +39,19 @@ class WelcomeController < ApplicationController
     end
   end
 
+  def count_tutors
+    s = params[:s]
+    @subject = Subject.find_by(expertise: s)
+    @tutors = @subject.tutors
+    @tutors_count = @tutors.count
+
+    respond_to do |format|
+        format.html { render plain: @tutors_count }
+        format.js
+    end
+
+  end
+
   def bye
   end
 
