@@ -13,7 +13,7 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<h3>Some subjects to consider: </h3>
+<h3>Some subjects to consider: (rollover for AJAX) </h3>
 <div id="suggestions">
 <% @subjects.each do |subject| %>
   <a href="/welcome/results?q=<%= subject.expertise %>"><%= subject.expertise %></a>&nbsp;
