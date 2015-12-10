@@ -1,4 +1,8 @@
-<%= form_for(@subject) do |f| %>
+
+<div class="new-subjects">
+
+
+<%= form_for(@subject, remote: true) do |s| %>
   <% if @subject.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
@@ -12,10 +16,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :expertise %><br>
-    <%= f.text_field :expertise %>
+    <%= s.label :expertise %><br>
+    <%= s.text_field :expertise %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= s.submit %>
   </div>
 <% end %>
+</div>

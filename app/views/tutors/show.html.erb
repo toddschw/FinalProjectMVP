@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<a href="/welcome/results?q=<%= session[:q] %>">Go back to results</a>
+<a href="/welcome/results?q=<%= session[:q] %>">Go back to results</a><br>
+<%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
 
 <h1>Full Profile for <%= @tutor.name %> </h1>
 
-<table border="1">
+<table class="pure-table">
+  <thead>
   <strong><th>Picture</th></strong>
   <strong><th>Rate</th></strong>
   <strong><th>Location</th></strong>
   <strong><th>Bio</th></strong>
+</thead>
 
   <tr>
     <td><%= image_tag @tutor.avatar, width: '100' %>
@@ -17,70 +20,52 @@
     <td><%= @tutor.city %></td>
     <td><%= @tutor.bio %></td>
   </tr>
-</table>
 
-<p>
-  <strong>All Areas of Expertise:</strong><Br>
+</table>
+  <!-- <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td> -->
+<br>
+<br>
+
+<div class="expertise">
+  <strong><u>All Areas of Expertise:</u></strong><Br>
   <% @subjects.each do |subject| %>
     <%= subject.expertise %><br>
     <% end %>
-</p>
+</div>
 
-<p>
-  <strong>Reviews</strong>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <% unless @ratings.empty? %>
+<div class="reviewer">
 
-    <table border="1">
-      <strong><th>Reviewer</th></strong>
-      <strong><th>Says</th></strong>
-      <strong><th>Number of Pencils</th></strong>
-
+  <table class="pure-table pure-table-bordered">
+    <thead>
       <tr>
+        <strong><th>Reviewer</th></strong>
+        <strong><th>Comment</th></strong>
+        <strong><th>Number of Pencils</th></strong>
+      </tr>
+    </thead>
+
+    <tbody>
         <% @ratings.each do |rating| %>
-        <td><%= rating.name_of_reviewer %></td>
-        <td><%= rating.review %></td>
-        <td><%= rating.pencils %></td>
+        <tr>
+            <td><%= rating.name_of_reviewer %></td>
+            <td><%= rating.review %></td>
+            <td><%= rating.pencils %></td>
       </tr>
       <% end %>
-    </table>
+    </tbody>
+  </table>
+</div>
 
-    <% else %><br>
-    <%= "No ratings yet." %>
-    <% end %>
-</p>
-
-<strong>Add a Review</strong> <Br>
-  <%= form_for(@rating) do |f| %>
-    <% if @rating.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
-
-        <ul>
-        <% @rating.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
+<br>
+<br>
 
 
-    <div class="field">
-      <%= f.label "your name" %><br>
-      <%= f.text_field :name_of_reviewer %>
+<div class ="reviews">
+<%= render '/ratings/form' %>
     </div>
-      <div class="field">
-      <%= f.label "Your comments:" %><br>
-      <%= f.text_field :review, size: 50 %>
-    </div>
-    <div class="field">
-      <%= f.label "Number of Pencils (max 5)" %><br>
-      <%= f.number_field :pencils %>
-    </div>
-    <div class="field">
-      <%= f.hidden_field :tutor_id, value: @tutor.id %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>

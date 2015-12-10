@@ -1,4 +1,7 @@
 
+
+
+<div class="reg">
 <% if @fb_info
   # This doesn't belong in the view
   # if you need to format stuff, it goes in the controller for now
@@ -11,7 +14,7 @@ else
   fb_name = ""
 end %>
 
-<%= form_for(@tutor) do |f| %>
+<%= form_for(@tutor, :html=>{:class => 'pure-form'}) do |f| %>
   <% if @tutor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tutor.errors.count, "error") %> prohibited this tutor from being saved:</h2>
@@ -24,32 +27,39 @@ end %>
     </div>
   <% end %>
 
-<div class="field">
+<div class="addsubjects">
   <%= f.label :subjects %>
   <%# [ ["math", 1], ["english", 2]] %>
   <%# if new tutor %>
   <%= f.select :subject_ids, @subjects.map { |s| [s.expertise, s.id] }, {}, multiple: true %>
+
+  <%= link_to 'Add a subject', new_subject_path %>
+
 </div>
 
-<p><%= link_to "Add a subject", new_subject_path %></p>
 
-<div class="field">
-  <%= f.label "Create a username" %>
-  <%= f.text_field :username %>
-</div>
-<div class="field">
-  <%= f.label "Choose a Password" %>
-  <%= f.password_field :password %>
-</div>
+
+
+    <div class="field">
+      <%= f.label "Username" %>
+      <%= f.text_field :username %>
+    </div>
+
+
+
+  <div class="field">
+    <%= f.label "Password" %>
+    <%= f.password_field :password %>
+  </div>
 
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name, :value => "#{fb_name}" %>
+    <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email, :value => "#{fb_email}" %>
+    <%= f.text_field :email %>
   </div>
   <div class="field">
     <%= f.label :city %>
@@ -69,7 +79,8 @@ end %>
   </div>
   <div class="actions">
     <%= f.submit %>
-
-
   </div>
+
+</table>
 <% end %>
+</div>

@@ -5,8 +5,16 @@ class WelcomeController < ApplicationController
 
   def show_results
     #render plain: params.to_json
-    @subjects = Subject.search(params[:q])
+
     @q = params[:q]
+
+    # test for input
+    if @q == ''
+      flash[:search_empty] = "Search box was empty.  Please try again!"
+      redirect_to welcome_path
+    end
+
+    @subjects = Subject.search(params[:q])
     # if @subjects
     #   @subjects
     # else

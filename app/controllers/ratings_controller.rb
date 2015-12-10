@@ -29,15 +29,12 @@ class RatingsController < ApplicationController # should be nested under Tutor
     @tutor = @rating.tutor
 
 
-    # respond_to do |format|
-    #   if @rating.save
-    #     format.html { redirect_to @rating, notice: 'Rating was successfully created.' }
-    #     format.json { render :show, status: :created, location: @rating }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @rating.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    respond_to do |format|
+        format.html { redirect_to ratings_path }
+        format.js
+        
+        format.json { render :show, status: :created, location: @rating }
+    end
   end
 
   # PATCH/PUT /ratings/1

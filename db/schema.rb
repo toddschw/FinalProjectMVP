@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151128174116) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "messages", force: :cascade do |t|
     t.string   "from"
     t.string   "email"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 20151128174116) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "messages", ["tutor_id"], name: "index_messages_on_tutor_id"
+  add_index "messages", ["tutor_id"], name: "index_messages_on_tutor_id", using: :btree
 
   create_table "ratings", force: :cascade do |t|
     t.string   "review"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 20151128174116) do
     t.datetime "updated_at",       null: false
   end
 
-  add_index "ratings", ["tutor_id"], name: "index_ratings_on_tutor_id"
+  add_index "ratings", ["tutor_id"], name: "index_ratings_on_tutor_id", using: :btree
 
   create_table "subjects", force: :cascade do |t|
     t.string   "expertise"
@@ -48,8 +51,8 @@ ActiveRecord::Schema.define(version: 20151128174116) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "topics", ["subject_id"], name: "index_topics_on_subject_id"
-  add_index "topics", ["tutor_id"], name: "index_topics_on_tutor_id"
+  add_index "topics", ["subject_id"], name: "index_topics_on_subject_id", using: :btree
+  add_index "topics", ["tutor_id"], name: "index_topics_on_tutor_id", using: :btree
 
   create_table "tutors", force: :cascade do |t|
     t.string   "name"
@@ -65,6 +68,10 @@ ActiveRecord::Schema.define(version: 20151128174116) do
     t.string   "avatar"
   end
 
-  add_index "tutors", ["username"], name: "index_tutors_on_username", unique: true
+  add_index "tutors", ["username"], name: "index_tutors_on_username", unique: true, using: :btree
 
+  add_foreign_key "messages", "tutors"
+  add_foreign_key "ratings", "tutors"
+  add_foreign_key "topics", "subjects"
+  add_foreign_key "topics", "tutors"
 end
