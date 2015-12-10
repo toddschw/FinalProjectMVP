@@ -4,7 +4,7 @@ class Subject < ActiveRecord::Base
 
   def self.search(search)
     if (search.present?)
-      Subject.where("expertise LIKE ?", "%#{search}%")
+      Subject.where('expertise ILIKE ?', "%#{search}%")
     else
       false
     end
