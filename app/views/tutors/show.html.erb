@@ -1,0 +1,71 @@
+<p id="notice"><%= notice %></p>
+
+<a href="/welcome/results?q=<%= session[:q] %>">Go back to results</a><br>
+<%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
+
+<h1>Full Profile for <%= @tutor.name %> </h1>
+
+<table class="pure-table">
+  <thead>
+  <strong><th>Picture</th></strong>
+  <strong><th>Rate</th></strong>
+  <strong><th>Location</th></strong>
+  <strong><th>Bio</th></strong>
+</thead>
+
+  <tr>
+    <td><%= image_tag @tutor.avatar, width: '100' %>
+      <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
+    <td><%= number_to_currency(@tutor.rate) %></td>
+    <td><%= @tutor.city %></td>
+    <td><%= @tutor.bio %></td>
+  </tr>
+
+</table>
+  <!-- <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td> -->
+<br>
+<br>
+
+<div class="expertise">
+  <strong><u>All Areas of Expertise:</u></strong><Br>
+  <% @subjects.each do |subject| %>
+    <%= subject.expertise %><br>
+    <% end %>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="reviewer">
+
+  <table class="pure-table pure-table-bordered">
+    <thead>
+      <tr>
+        <strong><th>Reviewer</th></strong>
+        <strong><th>Comment</th></strong>
+        <strong><th>Number of Pencils</th></strong>
+      </tr>
+    </thead>
+
+    <tbody>
+        <% @ratings.each do |rating| %>
+        <tr>
+            <td><%= rating.name_of_reviewer %></td>
+            <td><%= rating.review %></td>
+            <td><%= rating.pencils %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<br>
+
+
+<div class ="reviews">
+<%= render '/ratings/form' %>
+    </div>

@@ -1,0 +1,86 @@
+
+
+
+<div class="reg">
+<% if @fb_info
+  # This doesn't belong in the view
+  # if you need to format stuff, it goes in the controller for now
+  # This might be an opprtunity for later refactoring using the Presenter pattern.
+ fb_new_tutor = JSON.parse(@fb_info)
+ fb_email = fb_new_tutor["email"]
+ fb_name = fb_new_tutor["name"]
+else
+  fb_email = ""
+  fb_name = ""
+end %>
+
+<%= form_for(@tutor, :html=>{:class => 'pure-form'}) do |f| %>
+  <% if @tutor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tutor.errors.count, "error") %> prohibited this tutor from being saved:</h2>
+
+      <ul>
+      <% @tutor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="addsubjects">
+  <%= f.label :subjects %>
+  <%# [ ["math", 1], ["english", 2]] %>
+  <%# if new tutor %>
+  <%= f.select :subject_ids, @subjects.map { |s| [s.expertise, s.id] }, {}, multiple: true %>
+
+  <%= link_to 'Add a subject', new_subject_path %>
+
+</div>
+
+
+
+
+    <div class="field">
+      <%= f.label "Username" %>
+      <%= f.text_field :username %>
+    </div>
+
+
+
+  <div class="field">
+    <%= f.label "Password" %>
+    <%= f.password_field :password %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+  <div class="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="field">
+    <%= f.label :rate %>
+    <%= f.number_field :rate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+</table>
+<% end %>
+</div>

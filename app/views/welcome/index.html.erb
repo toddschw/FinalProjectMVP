@@ -1,0 +1,107 @@
+<div class="parallax-container">
+   <div class="parallax">
+</div>
+
+
+
+<div id="js-parallax-window" class="parallax-window">
+  <div class="parallax-static-content">
+
+<!-- SEARCH BAR -->
+<div class="search-background">
+  <div class="search">
+    <!-- <h3>What subject do you want to learn?</h3> -->
+
+
+
+    <%= form_tag("/welcome/results", method: "get") do %>
+      <%= text_field_tag :q, "Search for a Tutor" %>
+
+
+      <%= submit_tag("Search") %>
+    <% end %>
+</div>
+
+  <div class="subjects">
+
+<h3>Subjects to consider: </h3>
+<% @subjects.each do |subject| %>
+  <a href="/welcome/results?q=<%= subject.expertise %>" class="popular"><%= subject.expertise %></a>&nbsp;
+<% end %>
+</div>
+</div>
+
+ </div>
+<div id="js-parallax-background" class="parallax-background"></div>
+</div>
+
+
+
+<!--LOGO-->
+<div class="crest">
+  <img src="http://i71.photobucket.com/albums/i158/Mary_Gualtieri/tutrd_crest_zpst0bjfzue.jpg" border="0" alt=" photo tutrd_crest_zpst0bjfzue.jpg" id="crest"/></a>
+</div>
+<!-- ABOUT US -->
+<div class="about">
+
+  <h3><u>Who is TUTRD?</u></h3>
+  <p>TUTRD is an application that solves this problem by quickly, easily and efficiently connecting tutors and students based on location, subject, availability, price range and reviews. We effectivity cut out the middle man, saving the student thousands and raising tutor pay creating a symbiotic relationship between student and tutor happiness.</p>
+
+</div>
+
+
+<div class="video">
+  <div class="video-wrapper">
+
+
+  <iframe src="https://player.vimeo.com/video/146690941" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/146690941"></a></p>
+
+
+    </div>
+  </div>
+
+
+
+<!--Services-->
+<div class="services">
+  <h1>Testimonials:</h1>
+  <div class="cards">
+    <div class="card">
+      <div class="card-image">
+        <img src="http://soucyagency.com/blog/wp-content/uploads/2012/08/female-college-student1.jpg" alt="">
+      </div>
+      <div class="card-header">
+        Henrietta Ford
+      </div>
+      <div class="card-copy">
+        <p>TUTRD was such an amazing experience. Not only was I able to save money but I was able to get the help I needed to pass my biochemistry class. Thanks TUTRD!</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img src="http://blogs-images.forbes.com/troyonink/files/2012/02/shutterstock_18085369.jpg" alt="">
+      </div>
+      <div class="card-header">
+        Sally Fields
+      </div>
+      <div class="card-copy">
+        <p>TUTRD was able to connect me with a Tutor in no time. My tutor was helpful and very friendly. I would recommend TUTRD to everyone.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img src="https://rentpost.com/blog/wp-content/uploads/2015/06/college-student.jpg" alt="">
+      </div>
+      <div class="card-header">
+        Stephanie S.
+      </div>
+      <div class="card-copy">
+        <p>TUTRD was something that I really needed. As a college student putting myself through school, I really didn't have much money to spend. But TUTRD is affordable and the tutors are high quality! </p>
+      </div>
+    </div>
+  </div>
+
+      </div>
+</div>

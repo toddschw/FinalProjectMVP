@@ -1,0 +1,33 @@
+<h1>Welcome back, <%= current_tutor.name %></h1>
+
+<h2>Expertise: </h2>
+<% his_subjects = "" %>
+<% current_tutor.subjects.each do |subject| %>
+  <% his_subjects << subject.expertise << ", " %>
+<% end %>
+<%= his_subjects.chomp(', ') %>
+
+
+<h2>Your Hourly Rate:</h2>
+<div class="rate">
+<%= number_to_currency(current_tutor.rate) %>
+</div>
+
+<h2>Messages:</h2>
+<table class="pure-table pure-table-bordered">
+  <thead>
+  <strong><th>Student</th></strong>
+  <strong><th>Student's Email</th></strong>
+  <strong><th>Message Body</th></strong>
+</thead>
+<% @messages.each do |message|  %>
+  <tr>
+    <td><%= message.from %></td>
+    <td><a href="mailto:<%= message.email %>"><%= message.email %></a></td>
+    <td><%= message.body %></td>
+  </tr>
+<% end %>
+</table>
+
+<h2>Edit your profile:</h2>
+<%= render :partial => 'tutors/form' %>
