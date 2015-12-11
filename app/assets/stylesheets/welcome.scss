@@ -1,3 +1,357 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Search bar
+
+/*Search Button*/
+
+button[type=submit] {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    outline: none;
+    padding: 5px 10px;
+  }
+
+    img.search {
+      height: 12px;
+      opacity: 0.7;
+    }
+
+
+input[type="submit"] {
+  display: block;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  margin: auto;
+  margin-right: 23em;
+  color: #ccc;
+  background-color: #555;
+  background: webkit-linear-gradient(#888, #555);
+  background: linear-gradient(#000, #000);
+  border: 0 none;
+  border-radius: 3px;
+  text-shadow: 0 -1px 0 #000;
+  box-shadow: 0 1px #666, 0 5px 0 #444, 0 6px 6px rbga(0,0,0,0.6);
+  cursor: pointer;
+  box-shadow: 0.5px 0.5px 0.5px white;
+}
+
+input[type="submit"] {
+  font-family: 'Lato', san-serif;
+}
+
+input[type="submit"] {
+    margin: auto;
+}
+
+
+input[type="submit"]:hover {
+ color: white;
+}
+
+
+// Search Input Box //
+input#q {
+    @include appearance(none);
+    @include box-sizing(border-box);
+    @include transition(border-color);
+    background-color: white;
+    // border-radius: $base-border-radius;
+    // border-radius: $base-border-radius;
+    // border: 1px solid $base-border-color;
+    display: block;
+    font-size: 1em;
+    font-style: italic;
+    margin: auto;
+    // padding: ($base-spacing / 3) ($base-spacing / 3);
+    position: relative;
+    width: 50%;
+    text-align: center;
+
+}
+
+// Search Background //
+$parallax-window-height: 30em;
+$parallax-background-height: $parallax-window-height * 2;
+
+.parallax-window {
+  max-height: $parallax-window-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-static-content {
+  color: #9A9A8A;
+  padding: 8em 0;
+  position: relative;
+  z-index: 9;
+}
+
+.parallax-background {
+  background: url("https://images.unsplash.com/photo-1447968954315-3f0c44f7313c?dpr=2&fit=crop&fm=jpg&h=850&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1450") repeat;
+  background-position: top;
+  background-size: cover;
+  background-color: beige;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-window-height / 3;
+  width: 100%;
+}
+
+// Line Under the Subject //
+h3{
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.subject {
+  text-align: center;
+}
+
+a.popular {
+  color: white;
+  font-weight: bold;
+}
+
+
+// Logo//
+
+.crest {
+  text-align: center;
+}
+
+img#crest {
+  margin-bottom: -3%;
+}
+
+ // About //
+
+.about {
+ font-size: 3rem;
+ text-align: center;
+ padding-bottom: 2px;
+ padding-top: 1px
+}
+
+.about p {
+ font-size: 25px;
+}
+
+// Video //
+.video {
+ text-align: center;
+ margin-top: 4%;
+ margin-bottom: 4%;
+}
+
+
+.flex-container{
+ height: auto;
+ display: flex;
+ flex-flow: column;
+ padding-bottom: 0%;
+ justify-content: space-between;
+}
+
+//  testimonials //
+.cards {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(space-between);
+}
+
+.card {
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-spacing: 1.5em !default;
+  $action-color: #477DCA !default;
+  $dark-gray: #333 !default;
+  $base-font-color: $dark-gray !default;
+  $card-border-color: $base-border-color;
+  $card-border: 1px solid $card-border-color;
+  $card-background: lighten($card-border-color, 10%);
+  $card-header-background: $card-background;
+  $card-margin: 1em;
+  $card-image-hover-opacity: 0.7;
+  $card-image-hover-color: #F8F2B4;
+
+  @include flex-basis(15em);
+  @include flex-grow(1);
+  @include transition (all 0.2s ease-in-out);
+  background-color: $card-background;
+  border-radius: $base-border-radius;
+  border: $card-border;
+  box-shadow: 0 2px 4px darken($base-background-color, 10%);
+  cursor: pointer;
+  margin: 0 $card-margin $base-spacing $card-margin;
+  position: relative;
+
+
+  .card-image {
+    overflow: hidden;
+    height: 150px;
+    max-height: 150px;
+    background-color: $card-image-hover-color;
+
+    img {
+      @include transition (all 0.2s ease-in-out);
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  .card-header {
+    @include transition (all 0.2s ease-in-out);
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    line-height: 1.5em;
+    padding: ($base-spacing / 3) ($base-spacing / 2);
+  }
+
+  .card-copy {
+    font-size: 0.9em;
+    line-height: 1.5em;
+    padding: ($base-spacing / 2) ($base-spacing / 2);
+
+    p {
+      margin: 0 0 ($base-spacing / 2);
+    }
+  }
+
+
+      input[type="submit"] {
+        margin: auto;
+        font-family: 'Lato', san-serif;
+        margin-left: 64%;
+        margin-top: 20px;
+      }
+
+
+            input[type="submit"]:hover {
+              color: white;
+            }
+
+
+       input[type="submit"]:hover {
+         color: white;
+       }
+
+
+      // Search Input Box //
+        input#q {
+          width: 400px;
+          height: 57px;
+          border-radius: 2%;
+          position: relative;
+          top: 71px;
+          left: -20px;
+          font-size: 24px;
+          text-align: center;
+          color: black
+        }
+
+        // Search Background //
+        $parallax-window-height: 30em;
+        $parallax-background-height: $parallax-window-height * 2;
+
+        .parallax-window {
+          max-height: $parallax-window-height;
+          overflow: hidden;
+          position: relative;
+          text-align: center;
+          width: 100%;
+        }
+
+        .parallax-static-content {
+          color: #9A9A8A;
+          padding: 8em 0;
+          position: relative;
+          z-index: 9;
+        }
+
+        .parallax-background {
+          background: url("https://images.unsplash.com/photo-1447968954315-3f0c44f7313c?dpr=2&fit=crop&fm=jpg&h=850&ixjsv=2.0.0&ixlib=rb-0.3.5&q=50&w=1450") repeat;
+          background-position: top;
+          background-size: cover;
+          background-color: beige;
+          height: $parallax-background-height;
+          left: 0;
+          position: absolute;
+          top: - $parallax-window-height / 3;
+          width: 100%;
+        }
+
+
+
+
+
+
+        // Line Under the Subject //
+        h3{
+          color: white;
+          font-size: 30px;
+          text-align: center;
+        }
+
+        .subject {
+          text-align: center;
+        }
+
+        a.popular {
+          color: white;
+          font-weight: bold;
+        }
+
+
+        // Logo//
+
+        .crest {
+          text-align: center;
+        }
+
+
+    img {
+      opacity: $card-image-hover-opacity;
+    }
+  }
+
+  // &:active {
+  //   background-color: $card-background;
+  //
+  //   .card-header {
+  //     background-color: $card-background;
+  //   }
+  // }
+  //
+
+
+// Footer //
+.footer {
+    background: gray;
+    // padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+.footer p {
+  text-align: center;
+}
+
+// dashboard
+.rate {
+    padding-left: 2%;
+}
+
+h2 {
+    padding-left: 2%;
+}

@@ -3,6 +3,9 @@
   @import url(https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css);
 </style>
 
+
+
+<div class="reg">
 <% if @fb_info
   # This doesn't belong in the view
   # if you need to format stuff, it goes in the controller for now
@@ -31,7 +34,7 @@ end %>
     </div>
   <% end %>
 
-<div class="field">
+<div class="addsubjects">
   <%= f.label :subjects %>
   <%# [ ["math", 1], ["english", 2]] %>
   <%# if new tutor %>
@@ -40,7 +43,12 @@ end %>
 
 
 
-<%#= link_to 'Add a subject', new_subject_path %>
+  <%= link_to 'Add a subject', new_subject_path %>
+
+</div>
+
+
+
 
 
     <div class="field">
@@ -73,8 +81,8 @@ end %>
     <%= f.text_field :bio %>
   </div>
   <div class="field">
-    <%= f.label :picurl %>
-    <%= f.text_field :picurl %>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
   </div>
   <div class="field">
     <%= f.label :rate %>
@@ -86,8 +94,11 @@ end %>
 
 </table>
 <% end %>
+
 <script type="text/javascript">
 $(document).on("ready page:load", function(){
   $(".chosen").chosen();
 });
 </script>
+
+</div>

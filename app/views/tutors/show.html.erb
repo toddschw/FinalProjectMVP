@@ -5,9 +5,11 @@
   <tr>
     <td style="padding:0 25px 0 25px;">
 
-<a style="color:#8c8c8c;" href="/welcome/results?q=<%= session[:q] %>">Back to Results</a>
 
 <img src="/assets/back.png">
+
+<a href="/welcome/results?q=<%= session[:q] %>">Go back to results</a><br>
+<%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
 
 
 <h1>Full Profile for <%= @tutor.name %> </h1>
@@ -21,42 +23,56 @@
 </thead>
 
   <tr>
-    <td><%= image_tag @tutor.picurl, width: '100' %>
+    <td><%= image_tag @tutor.avatar, width: '100' %>
       <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td>
     <td><%= number_to_currency(@tutor.rate) %></td>
     <td><%= @tutor.city %></td>
     <td><%= @tutor.bio %></td>
   </tr>
-</table>
 
-<p>
-  <strong>All Areas of Expertise:</strong><Br>
+</table>
+  <!-- <br><%= link_to "Contact me!", new_message_path(:tutor_id =>@tutor.id ) %></td> -->
+<br>
+<br>
+
+<div class="expertise">
+  <strong><u>All Areas of Expertise:</u></strong><Br>
   <% @subjects.each do |subject| %>
     <%= subject.expertise %><br>
     <% end %>
-</p>
+</div>
 
-<p>
-  <strong id="ratings_headline">Reviews:</strong>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <% unless @ratings.empty? %>
 
 
-    <table id="ratings_table" class="pure-table pure-table-bordered">
+<div class="reviewer">
+
+  <table class="pure-table pure-table-bordered">
     <thead>
-      <strong><th>Student</th></strong>
-      <strong><th>Review</th></strong>
-      <strong><th># of Pencils</th></strong>
+      <tr>
+        <strong><th>Reviewer</th></strong>
+        <strong><th>Comment</th></strong>
+        <strong><th>Number of Pencils</th></strong>
+      </tr>
     </thead>
 
-      <tr>
+    <tbody>
         <% @ratings.each do |rating| %>
-        <td><%= rating.name_of_reviewer %></td>
-        <td><%= rating.review %></td>
-        <td><%= rating.pencils %></td>
+        <tr>
+            <td><%= rating.name_of_reviewer %></td>
+            <td><%= rating.review %></td>
+            <td><%= rating.pencils %></td>
       </tr>
       <% end %>
-    </table>
+    </tbody>
+  </table>
+</div>
+
 
     <% else %><br>
     <span id="noratings"><%= "No ratings yet." %></span>
@@ -102,3 +118,11 @@
 </td>
 </tr>
 </table>
+
+<br>
+<br>
+
+
+<div class ="reviews">
+<%= render '/ratings/form' %>
+    </div>
